@@ -1,0 +1,397 @@
+<div id="content" class="app-content" role="main"
+	ng-controller="ConvenioIncluirController as ctrl">
+	<div class="box">
+		<div class="box-row">
+			<div class="box-cell">
+				<div class="card">
+
+					<div class="card-heading">
+						<h2>Incuir Convênio</h2>
+					</div>
+					<div class="card-body"> 
+						<div class="col-sm-12" ng-show="ctrl.dataConenio==null">
+								<tipo-Pessoa-Fisica-Juridica ng-model="ctrl.pessoaJuridica" />
+							</div> 
+						<div class="form-group row"> 
+						
+							 
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#categora"
+										data-target="#categora"> Informações cadastrais</a>
+								</h4>
+							</div>
+								 
+								
+							<div class="card-body text-box" >
+						 		 
+									<div class="row card-text-box">
+										<div class="col-md-2">
+											<div class="panel">
+												<label class="control-label">Número do convênio</label> <span
+													class="input">{{ctrl.dataConenio.nuConvenio}} </span>
+											</div>
+										</div>
+										<div class="col-md-2 ">
+											<div class="panel">
+												<label class="control-label">CPF/CNPJ</label> <span
+													class="input"> <span
+													ng-if="ctrl.dataConenio.nuCgcBasico!=0">
+														{{zeroEsquerda(ctrl.dataConenio.nuCgcBasico,8)}}/
+														{{zeroEsquerda(ctrl.dataConenio.nuCgcOrdem,4)}}-{{ctrl.dataConenio.nuCgcDv}}
+												</span> <span ng-if="ctrl.dataConenio.nuCpf!=0">
+														{{zeroEsquerda(ctrl.dataConenio.nuCpf,9)}}-{{ctrl.dataConenio.nuCpfDv}}
+												</span>
+												</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+											<div class="panel">
+												<label class="control-label">Nome do convênio</label> <span
+													class="input">{{ctrl.dataConenio.noConvenio}} </span>
+											</div>
+										</div>
+
+										<div class="col-md-2">
+											<div class="panel">
+												<label class="control-label">Tipo Pessoa</label> <span
+													class="input">{{ctrl.pessoaJuridica.noTipoPessoa}} </span>
+											</div>
+										</div>
+
+
+										<div class="col-md-2">
+											<div class="panel">
+												<label class="control-label">Situação</label> <span
+													class="input">Ativo </span>
+											</div>
+										</div>
+
+									</div>
+									
+									<div id="categora" class="panel-collapse collapse in">
+									<div class="row card-text-box">
+										<div class="col-md-5">
+											<div class="panel">
+												<label class="control-label">Endereço</label> <span
+													class="input">{{ctrl.dataConenio.noLogradouro}} </span>
+											</div>
+										</div>
+										<div class="col-md-2">
+											<div class="panel">
+												<label class="control-label">Numero</label> <span
+													class="input">{{ctrl.dataConenio.nuLocal}} </span>
+											</div>
+										</div>
+
+										<div class="col-md-2">
+											<div class="panel">
+												<label class="control-label">Complemento</label> <span
+													class="input">{{ctrl.dataConenio.noComplemento}} </span>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="panel">
+												<label class="control-label">Telefone</label> <span
+													class="input">{{ctrl.dataConenio.nuTelefone}} </span>
+											</div>
+										</div>
+
+									</div>
+
+									<div class="row card-text-box">
+										<div class="col-md-5">
+											<div class="panel">
+												<label class="control-label">Bairro</label> <span
+													class="input">{{ctrl.dataConenio.noBairro}} </span>
+											</div>
+										</div>
+										<div class="col-md-2">
+											<div class="panel">
+												<label class="control-label">Cidade</label> <span
+													class="input">{{ctrl.dataConenio.noCidade}} </span>
+											</div>
+										</div>
+
+										<div class="col-md-2">
+											<div class="panel">
+												<label class="control-label">UF</label> <span class="input">{{ctrl.dataConenio.noUf}}
+												</span>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="panel">
+												<label class="control-label">CEP</label> <span class="input">{{ctrl.dataConenio.nuCep}}
+												</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="row card-text-box">
+										<div class="col-md-9">
+											<div class="panel">
+												<label class="control-label">Agência de vinculação</label> <span
+													class="input">{{ctrl.dataConenio.nuCgcUnidade}} </span>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="panel">
+												<label class="control-label text-center">CNAE</label> <span
+													class="input">{{ctrl.dataConenio.nuCnae}} </span>
+											</div>
+										</div>
+
+									</div>
+									<div class="row card-text-box">
+										<div class="col-md-4">
+											<div class="panel">
+												<label class="control-label">Data Início da vigência</label>
+												<span class="input">{{ctrl.dataConenio.dtInicioVigencia}}
+												</span>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="panel">
+												<label class="control-label">Data Fim da vigência</label> <span
+													class="input">{{ctrl.dataConenio.dtFimVigencia}} </span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+											<div class="panel">
+												<label class="control-label">Data inclusão</label> <span
+													class="input">{{ctrl.dataConenio.dtInclusao}} </span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<ul class="nav nav-tabs" id="myTab" role="tablist"  >
+										<li class="nav-item active"><a class="nav-link active"
+											id="home-tab" data-toggle="tab" data-target="#tab1" role="tab"
+											aria-controls="home" aria-selected="true">Geral</a></li>
+										
+											<li class="nav-item"><a class="nav-link" id="profile-tab"
+											data-toggle="tab" data-target="#tab2" role="tab"
+											aria-controls="profile" aria-selected="false">Compromisso</a></li>
+									 
+									</ul>
+										<div class="tab-content" id="myTabContent" >
+											<div class="tab-pane fade active in" id="tab1" role="tabpanel" aria-labelledby="home-tab">
+											<br>
+											<div class="row card-text-box">
+												
+												<div class="col-md-4">
+													<div class="panel">
+														<div ng-repeat="tp in convenioFormalizado">
+															<label class="el-switch "> <input type="checkbox"
+																ng-model="ctrl.dataConenio.icFormalizacaoContrato"
+																value="{{tp.idTipo}}" ng-true-value="{{tp.idTipo}}"
+																ng-false-value=""
+																ng-checked="tp.idTipo == ctrl.dataConenio.icFormalizacaoContrato" />
+																<span class="el-switch-style"></span>
+															</label><span class="margin-r">{{tp.noTipo}}</span>
+														</div>
+													</div>
+												</div>
+												
+												<div class="col-md-4">
+													<div class="panel">
+														<div ng-repeat="tp in tipoColigada">
+															<label class="el-switch "> <input type="checkbox"
+																ng-model="ctrl.dataConenio.icEmpresaColigada"
+																value="{{tp.idTipo}}" ng-true-value="{{tp.idTipo}}"
+																ng-false-value=""
+																ng-checked="tp.idTipo == ctrl.dataConenio.icEmpresaColigada" />
+																<span class="el-switch-style"></span>
+															</label><span class="margin-r">{{tp.noTipo}}</span>
+														</div>
+													</div>
+												</div>
+												
+												<div class="col-md-4">
+													<div class="panel">
+														<div ng-repeat="tp in tipoIOF">
+															<label class="el-switch "> <input type="checkbox"
+																ng-model="ctrl.dataConenio.icIof"
+																value="{{tp.idTipo}}" ng-true-value="{{tp.idTipo}}"
+																ng-false-value=""
+																ng-checked="tp.idTipo == ctrl.dataConenio.icIof" />
+																<span class="el-switch-style"></span>
+															</label><span class="margin-r">{{tp.noTipo}}</span>
+														</div>
+													</div>
+												</div>
+
+										</div>
+
+										<div class="row card-text-box">
+												<div class="col-md-4">
+													<div class="panel">
+														<label class="control-label">Regra de lançamento</label>
+														<div ng-repeat="tp in tipoLancamento">
+															<label class="el-switch "> <input type="checkbox"
+																ng-model="ctrl.dataConenio.icRegraLancamento"
+																value="{{tp.idTipo}}" ng-true-value="{{tp.idTipo}}"
+																ng-false-value=""
+																ng-checked="tp.idTipo == ctrl.dataConenio.icRegraLancamento" />
+																<span class="el-switch-style"></span>
+															</label><span class="margin-r">{{tp.noTipo}}</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-md-4">
+													<div class="panel">
+														<label class="control-label text-center">Tipo de conta no retorno</label>
+														<div ng-repeat="tp in tipoContaRetorno">
+															<label class="el-switch "> <input type="checkbox"
+																ng-model="ctrl.dataConenio.icRetornoConta"
+																value="{{tp.idTipo}}" ng-true-value="{{tp.idTipo}}"
+																ng-false-value=""
+																ng-checked="tp.idTipo == ctrl.dataConenio.icRetornoConta" />
+																<span class="el-switch-style"></span>
+															</label><span class="margin-r">{{tp.noTipo}}</span>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row card-text-box">
+												<div class="col-md-2 ">
+													<div class="panielswitch">
+														<label class="control-label ">Tipo Empresa</label> <select
+															ng-model="ctrl.dataConenio.icTipoEmpresa"
+															class="form-control">
+															<option value="">Selecione...</option>
+															<option
+																ng-selected="ctrl.dataConenio.icTipoEmpresa == item.idTipo"
+																ng-repeat=" item in tipoEmpresa | orderBy:'noTipo' "
+																ng-value="item.idTipo">{{item.noTipo}}</option>
+														</select>
+													</div>
+												</div>
+
+												<div class="col-md-2">
+													<div ng-show="ctrl.dataConenio.icTipoEmpresa  != 5"
+														class="panielswitch">
+														<label class="control-label ">Esfera </label> <select
+															ng-model="ctrl.dataConenio.icTipoEmpresa"
+															class="form-control">
+															<option value="">Selecione...</option>
+															<option
+																ng-selected="ctrl.dataConenio.icTipoEmpresa == item.idTipo"
+																ng-repeat=" item in tipoEsfera | orderBy:'noTipo' | filter: ctrl.fiterTipoEsfera"
+																ng-value="item.idTipo">{{item.noTipo}}</option>
+														</select>
+													</div>
+													<div ng-show="ctrl.dataConenio.icTipoEmpresa == 5"
+														class="panielswitch">
+														<label for="nomePacote">CIF</label> <input
+															class="form-control form-control-lg cif" id="nomePacote"
+															type="text" />
+													</div>
+												</div>
+
+												<div class="col-md-4">
+													<div class="panielswitch">
+														<label class="control-label ">Categoria / Porte</label> <select
+															ng-model="ctrl.dataConenio.icPorte" class="form-control">
+															<option value="">Selecione...</option>
+															<option
+																ng-selected="ctrl.dataConenio.icPorte == item.idTipo"
+																ng-repeat=" item in categoriaPote | orderBy:'noTipo'  | filter: ctrl.fiterCategoriaPote"
+																ng-value="item.idTipo">{{item.noTipo}}</option>
+														</select>
+													</div>
+												</div>
+
+
+												<div class="col-md-4">
+													<div class="panielswitch">
+														<label class="control-label ">Segmento</label> <select
+															ng-model="ctrl.dataConenio.coSegmentoEmpresa"
+															class="form-control">
+															<option value="">Selecione...</option>
+															<option
+																ng-selected="ctrl.dataConenio.coSegmentoEmpresa== item.idTipo"
+																ng-repeat=" item in segmento | orderBy:'noTipo'  | filter: ctrl.fiterCategoriaPote"
+																ng-value="item.idTipo">{{item.noTipo}}</option>
+														</select>
+													</div>
+												</div>
+
+												<div class="col-md-4">
+													<div class="panielswitch">
+														<label class="control-label ">Realiza Tradução de
+															Conta depósito</label> <select
+															ng-model="ctrl.dataConenio.icTipoEmpresa"
+															class="form-control">
+															<option value="">Selecione...</option>
+															<option
+																ng-selected="ctrl.dataConenio.icTipoEmpresa == item.idTipo"
+																ng-repeat=" item in contaDeposito | orderBy:'noTipo'   "
+																ng-value="item.idTipo">{{item.noTipo}}</option>
+														</select>
+													</div>
+												</div>
+
+												<div class="col-md-4">
+													<div class="panielswitch">
+														<label class="control-label ">CNPJ Pagador</label> <select
+															ng-model="ctrl.dataConenio.icCnpjPagador"
+															class="form-control">
+															<option value="">Selecione...</option>
+															<option
+																ng-selected="ctrl.dataConenio.icCnpjPagador == item.idTipo"
+																ng-repeat=" item in cnpjPagador | orderBy:'noTipo'   "
+																ng-value="item.idTipo">{{item.noTipo}}</option>
+														</select>
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+											
+											<div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="home-tab">
+				
+												aaa dasdasd
+				
+											</div>
+											
+										</div>
+									
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+					<div class="card form-action hidden-print">
+
+						<button class="btn btn-fw waves-effect"
+							ng-click="openViewPagina('convenio')"
+							ng-show="ctrl.dataConenio==null">
+							<i class="fa fa-arrow-left m-r-xs"></i> Voltar
+						</button>
+
+						<button class="btn btn-fw waves-effect"
+							ng-click="ctrl.dataConenio=null" ng-show="ctrl.dataConenio!=null">
+							<i class="fa fa-arrow-left m-r-xs"></i> Voltar
+						</button>
+
+
+						<button id="btnConfirmar"
+							class="btn btn-fw btn-primary waves-effect hidden-print"
+							ng-click="ctrl.consultaConvenio()" title="Consultar"
+							data-toggle="tooltip">
+							<i class="fas fa-share-square m-r-xs"></i> Consultar
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,33 @@
+
+<div ng-init="start = 0; endIndex = 0">
+	<!-- inicio servico -->
+	<div ng-repeat="listaCategoria in ctrl.listaCategoriaFull"  ng-init="endIndex = endIndex+1 ">
+		<div class="panel panel-default">
+			
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#categora{{$index}}" data-target="#categora{{$index}}">
+						{{zeroEsquerda(listaCategoria.nuCategoria,4)}} - {{listaCategoria.deCategoria}} </a>
+				</h4>
+			</div>
+ 
+			<div id="categora{{$index}}" ng-class="$index=='0' ? ' in': ''" class="panel-collapse collapse ">
+				<div class="panel-body">  
+					<div class="form-check"  ng-repeat="listaServico in listaCategoria.servicos | orderBy:'nuServico' "   ng-init="id = ctrl.addIndex()" >
+						<label class="el-switch"> 
+							<input type="checkbox"   
+							   ng-model="ctrl.servicos[id].icSelecionado" 
+							   value="{{listaServico.nuServico}}"
+						 	   ng-checked="ctrl.servicos[id].icSelecionado" 
+							   ng-change="ctrl.validarCheck(ctrl.servicos[id], listaCategoria.nuCategoria); ctrl.validarServicoTarifa(ctrl.servicos[id])"
+							> 
+							<span class="el-switch-style"></span>
+						</label> <span class="margin-r">{{listaServico.deServico}} </span>
+					</div>
+ 
+				</div>
+			</div>
+		</div> 
+	</div>
+</div>
+  

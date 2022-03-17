@@ -1,0 +1,112 @@
+<div id="content" class="app-content" role="main"
+	ng-controller="PacoteManutencaoController as ctrl">
+	<div class="box" ng-init="ctrl.init()">
+		<div class="box-row">
+			<div class="box-cell">
+				<div class="card">
+					<div class="card-heading">
+						<h2>Incluir Pacote</h2>
+					</div>
+					<div class="card-body">
+
+						<div class="form-group row">
+
+
+							<div class="col-sm-4">
+								<div>
+									<label>Tipo de Compromisso</label> <select
+										ng-model="ctrl.nuTipoCompromisso" class="form-control"
+										ng-change="ctrl.consultaPacote(ctrl.nuTipoCompromisso)">
+										<option value="">Selecione...</option>
+										<option
+											ng-selected="ctrl.nuTipoCompromisso == item.nuTipoCompromisso"
+											ng-repeat=" item in ctrl.dataTipoCompromisso | orderBy:'nuTipoCompromisso' "
+											ng-value="item.nuTipoCompromisso">{{zeroEsquerda(item.nuTipoCompromisso,4)}}
+											- {{item.nomeTipoCompromisso}}</option>
+
+									</select>
+								</div>
+							</div>
+
+							<div class="col-sm-4">
+								<div>
+									<label>Pacote Base</label>
+									<ui-select ng-model="ctrl.itemPacote"
+										on-select="ctrl.consultCategoria(ctrl.nuTipoCompromisso, ctrl.itemPacote)">
+									<ui-select-match placeholder="Selecione...">
+									{{zeroEsquerda($select.selected.nuPacote,9)}} -
+									{{$select.selected.nomePacote}}</ui-select-match> <ui-select-choices
+										repeat="item in ctrl.dataPacote | filter: $select.search">
+
+									<small> {{zeroEsquerda(item.nuPacote,9)}} -
+										{{item.nomePacote}} </small> </ui-select-choices> </ui-select>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<div>
+									<label for="nomePacote">Nome do Pacote</label> <input
+										class="form-control form-control-lg" id="nomePacote"
+										type="text" placeholder="" />
+								</div>
+							</div>
+						</div>
+
+						<ul class="nav nav-tabs" id="myTab" role="tablist"
+							ng-show="ctrl.exbirAbas">
+							<li class="nav-item active"><a class="nav-link active"
+								id="home-tab" data-toggle="tab" data-target="#tab1" role="tab"
+								aria-controls="home" aria-selected="true">Serviço</a></li>
+							<li class="nav-item"><a class="nav-link" id="profile-tab"
+								data-toggle="tab" data-target="#tab2" role="tab"
+								aria-controls="profile" aria-selected="false">Tarifa</a></li>
+							<li class="nav-item"><a class="nav-link" id="contact-tab"
+								data-toggle="tab" data-target="#tab3" role="tab"
+								aria-controls="contact" aria-selected="false">Lançamento</a></li>
+						</ul>
+						<div class="tab-content" id="myTabContent"
+							ng-show="ctrl.exbirAbas">
+							<div class="tab-pane fade active in" id="tab1" role="tabpanel"
+								aria-labelledby="home-tab">
+
+								<div ng-include="'./pages/pacote/tab/tabServico.html'"></div>
+
+							</div>
+							<div class="tab-pane fade" id="tab2" role="tabpanel"
+								aria-labelledby="home-tab" ng-show="ctrl.exbirAbas">
+
+								<ng-include src="'./pages/pacote/tab/tabTarifa.html'"></ng-include>
+
+							</div>
+							<div class="tab-pane fade" id="tab3" role="tabpanel"
+								aria-labelledby="home-tab" ng-show="ctrl.exbirAbas">
+								<ng-include
+									src="'./pages/pacote/tab/tabLancamentoHistorico.html'"></ng-include>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card form-action">
+					<button class="btn btn-fw waves-effect"
+						ng-click="openViewPagina('pacote')">
+						<i class="fa fa-arrow-left m-r-xs"></i> Voltar
+					</button>
+					<button class="btn btn-fw waves-effect" ng-show="ctrl.exbirAbas"
+						ng-click="ctrl.consultCategoria(ctrl.nuTipoCompromisso, ctrl.pacote)">
+						<i class="fa fa-lg fa-history">&nbsp;</i> <span>Limpar</span>
+					</button>
+					<button class="btn btn-fw btn-primary waves-effect"
+						ng-show="ctrl.exbirAbas">
+						<i class="fa fa-edit m-r-xs"></i> Salvar
+					</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

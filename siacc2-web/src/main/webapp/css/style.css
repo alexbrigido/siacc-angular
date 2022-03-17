@@ -1,0 +1,98 @@
+.headerMenu {
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 8px;
+	padding-left: 10px;
+	margin-bottom: 20px;
+	list-style: none;
+	border-radius: 4px;
+}
+
+.panel-heading {
+   padding: 9px 24px  !important;
+}
+.panel-title {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 11px !important;
+	font-weight: bolder;
+	color: inherit;
+}
+
+.painel-div {
+	border: 1px solid lightgrey !important;
+	border-radius: 5px !important;
+	padding: 15px 20px !important;
+}
+
+.label-float {
+	
+}
+
+input {
+	border: 1px solid lightgrey !important;
+	border-radius: 5px !important;
+	padding: 15px 20px !important;
+	font-size: 16px !important;
+	transition: all .1s linear !important;
+	-webkit-transition: all .1s linear !important;
+	-moz-transition: all .1s linear !important;
+	-webkit-appearance: none !important;
+}
+
+select, .ui-select-toggle {
+	border: 1px solid lightgrey !important;
+	border-radius: 5px !important;
+	font-size: 13px !important;
+	font-family: 'Trebuchet MS', sans-serif !important;
+}
+
+input:focus, select:focus {
+	border: 1px solid #3951b2 !important;
+}
+
+.label-float input::placeholder {
+	color: transparent;
+}
+
+.label-float input:required:invalid+label {
+	color: red;
+}
+
+.label-float input:focus:required:invalid {
+	border: 2px solid red;
+}
+
+.label-float input:required:invalid+label:before {
+	content: '*';
+}
+
+.label-float input:focus+label, .label-float input:not (:placeholder-shown
+	) +label {
+	font-size: 13px;
+	top: 0;
+	color: #3951b2;
+}
+
+.select2>.select2-choice.ui-select-match {
+	/* Because of the inclusion of Bootstrap */
+	height: 29px;
+}
+
+.selectize-control>.selectize-dropdown {
+	top: 36px;
+}
+/* Some additional styling to demonstrate that append-to-body helps achieve the proper z-index layering. */
+.select-box {
+	background: #fff;
+	position: relative;
+	z-index: 1;
+}
+.tableBoxTD{
+	  padding: 6px 6px !important;
+     font: 400 14.3333px Arial !important;
+         padding-top: 15px !important; 
+}
+ 
+
+

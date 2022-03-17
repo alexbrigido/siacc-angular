@@ -1,0 +1,180 @@
+<div id="content" class="app-content" role="main"
+	ng-controller="ConvenioIncluirController">
+	<div class="box">
+		<div class="box-row">
+			<div class="box-cell"> 
+					<div class="card">
+						<div class="card-heading">
+							<h2>Incuir Convênio</h2>
+						</div>
+						<div class="card-body">
+
+							<div class="form-group row">
+								<div class="col-sm-12">
+									 <tipo-Pessoa-Fisica-Juridica/> 
+								</div>
+								<div class="col-sm-12">
+
+									<div class="form-group row">
+										<div class="col-sm-6">
+											<label>CPF / CNPJ</label> <input type="text" class="md-input"
+												maxlength="68" />
+										</div>
+									</div>
+									<div class="form-group row">
+
+										<div class="col-sm-6">
+											<label>Convênio</label> <select class="form-control"
+												id="exampleFormControlSelect1">
+												<option>teste 1</option>
+												<option>teste 2</option>
+												<option>teste 3</option>
+												<option>teste 4</option>
+												<option>teste 5</option>
+											</select>
+										</div>
+
+										<div class="col-sm-6">
+											<label>Código do compromisso</label> <select
+												class="form-control" id="exampleFormControlSelect1">
+												<option>teste 1</option>
+												<option>teste 2</option>
+												<option>teste 3</option>
+												<option>teste 4</option>
+												<option>teste 5</option>
+											</select>
+										</div>
+
+									</div>
+									<div class="form-group row">
+										<div class="col-sm-6">
+											<label>Apelido </label> <input type="text" class="md-input"
+												maxlength="68" />
+										</div>
+										<div class="col-sm-6">
+											<label>Nome do Campo </label> <input type="text"
+												class="md-input" maxlength="68" />
+										</div>
+
+									</div>
+									<div class="form-group row">
+										<div class="col-sm-6">
+											<label>Qtd de Algarismos do Identificador </label> <input
+												type="text" class="md-input" maxlength="3" />
+										</div>
+										<div class="col-sm-6">
+											<label>Qtd de Algarismos do Digito do Identificador </label>
+											<input type="text" class="md-input" maxlength="3" />
+										</div> 
+									</div>
+									
+									<div class="form-group row">
+										<div class="col-sm-12" >
+											<table border=0 width="100%">
+												<tr>
+													<td width="50%">Posição Vertical </td>
+													<td> 
+													
+														<div class="checkbox-inline ">
+															<label class="el-switch"> <input type=radio
+																ng-model="posicaoVertical" ng-value='0'> <span
+																class="el-radio-style"></span>
+															</label> <span class="margin-r">Superior    </span>
+														</div>
+														<div class="checkbox-inline">
+															<label class="el-switch"> <input type=radio
+																ng-model="posicaoVertical" ng-value='1'
+																> <span
+																class="el-radio-style"></span>
+															</label> <span class="margin-r">Central      </span>
+														</div>													
+														<div class="checkbox-inline">
+															<label class="el-switch"> <input type=radio
+																ng-model="posicaoVertical" ng-value='2'
+																> <span
+																class="el-radio-style"></span>
+															</label> <span class="margin-r">Inferior      </span>
+														</div>	 
+													</td>
+												</tr>
+												
+												<tr>
+													<td>Posição Horizontal </td>
+													<td> 
+													
+														<div class="checkbox-inline ">
+															<label class="el-switch"> <input type=radio
+																ng-model="posicaoHorizontal" ng-value='0'
+																> <span
+																class="el-radio-style"></span>
+															</label> <span class="margin-r">Superior    </span>
+														</div>
+														<div class="checkbox-inline">
+															<label class="el-switch"> <input type=radio
+																ng-model="posicaoHorizontal" ng-value='1'
+																> <span
+																class="el-radio-style"></span>
+															</label> <span class="margin-r">Central      </span>
+														</div>													
+														<div class="checkbox-inline">
+															<label class="el-switch"> <input type=radio
+																ng-model="posicaoHorizontal" ng-value='2'
+																> <span
+																class="el-radio-style"></span>
+															</label> <span class="margin-r">Inferior      </span>
+														</div>	 
+													</td>
+												</tr>
+												
+												<tr>
+													<td>Quantidade de dias para débitos após inclusão do cadastro   </td>
+													<td> 
+													
+														<div class="checkbox-inline ">
+															<label class="el-switch"> <input type=radio
+																ng-model="debitoInclusaoCadastro" ng-value='0'
+																> <span
+																class="el-radio-style"></span>
+															</label> <span class="margin-r">Superior    </span>
+														</div>
+														<div class="checkbox-inline">
+															<label class="el-switch"> <input type=radio
+																ng-model="debitoInclusaoCadastro" ng-value='1'
+																> <span
+																class="el-radio-style"></span>
+															</label> <span class="margin-r">Central      </span>
+														</div>													
+														<div class="checkbox-inline">
+															<label class="el-switch"> <input type=radio
+																ng-model="debitoInclusaoCadastro" ng-value='2'
+																> <span
+																class="el-radio-style"></span>
+															</label> <span class="margin-r">Inferior      </span>
+														</div>	 
+													</td>
+												</tr>
+												
+											</table>
+										</div> 
+									</div>
+									
+								</div>								
+							</div>
+						</div>
+						<div class="card form-action hidden-print">
+
+							<button id="btnConfirmar"
+								class="btn btn-fw btn-primary waves-effect hidden-print"
+								ng-click="openViewPagina('convenioincluir')" title="Incluir"
+								data-toggle="tooltip">
+								<i class="fas fa-share-square m-r-xs"></i> Incluir
+							</button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ 
+

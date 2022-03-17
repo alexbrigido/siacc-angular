@@ -1,0 +1,68 @@
+<aside id="aside" class="app-aside modal fade folded" role="menu">
+	<div class="left">
+		<div class="box bg-white">
+			<div class="navbar md-whiteframe-z1 no-radius blue header-caixa-logo">
+				<a ng-controller="MenuController" href="" ng-click="openViewPagina('principal')" class="navbar-brand hidden-in-folded hidden-sm hidden-xs">
+					<img src="./imagen/x.png" alt="Somente o X da logo da caixa econômica federal" style="max-height: 30px; margin-left: -1px;">
+				</a>
+				<a ng-controller="MenuController" href="" ng-click="openViewPagina('principal')" class="navbar-brand hidden-folded">
+					<img src="./imagen/logo.png" alt="Logo da caixa econômica federal" style="max-height: 30px;">
+				</a> 
+			</div>
+			<div class="box-row" ng-controller="MenuController">
+				<div class="box-cell scrollable hover">
+					<div class="box-inner">
+						<div id="nav">
+							<nav ui-nav>
+							<ul class="nav">
+							 	<li>
+										<a href="" ui-sref-active="active" ng-click="openViewPagina('/')" title="Página Principal">
+											<i class="icon mdi-action-dashboard i-20"></i>
+											<span class="font-normal">Principal</span>
+										</a>
+									</li>
+							
+  
+								 
+									
+									<li ng-repeat="menu in arvoreNavegacao">
+										<a href data-target="#{{menu.filhosFilhoProcessoNome}}" data-parent="#menu.filhosFilhoProcessoNome" ng-click="openView(menu)" ui-sref-active="active" title="{{menu.filhosFilhoProcessoNome}}">
+											<span class="pull-right text-muted" ng-if="menu.filhos.length >0">
+												<i class="fa fa-caret-down"></i>
+											</span>
+											<i ng-if="menu.filhosFilhoProcessoCodigo == 001100" class="icon mdi-editor-wrap-text i-20"></i>
+											<i ng-if="menu.filhosFilhoProcessoCodigo == 001200" class="icon mdi-file-cloud-upload i-20"></i>
+											<i ng-if="menu.filhosFilhoProcessoCodigo == 001400" class="icon mdi-action-search i-20"></i>
+											<i ng-if="menu.filhosFilhoProcessoCodigo == 001300" class="icon mdi-file-folder-open i-20"></i>
+											<i ng-if="menu.filhosFilhoProcessoCodigo == 001500" class="icon mdi-notification-event-note i-20"></i>
+											<i ng-if="menu.filhosFilhoProcessoCodigo == 001600" class="icon mdi-action-alarm i-20"></i>
+											<span class="font-normal">{{menu.filhosFilhoProcessoNome}}</span>
+										</a>
+										<ul class="nav nav-sub" id="{{menu.filhosFilhoProcessoNome}}" >
+											<li ng-repeat="submenu in menu.filhos">
+												<a href ui-sref-active="active" ng-click="openViewPagina(submenu.filhosFilhoExecutavel)" title="{{submenu.filhosFilhoProcessoNome}}">
+													<span class="font-normal">{{submenu.filhosFilhoProcessoNome}}</span>
+												</a>
+											</li>
+										</ul>
+									</li>
+									 
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+			<nav>
+				<ul class="nav b-t b">
+					<li>
+						<a>
+							<i class="icon mdi-action-info-outline i-20 text-info"></i>
+							<span>versão: {{versaoSistema}}</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</aside>

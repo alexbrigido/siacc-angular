@@ -1,0 +1,36 @@
+<!-- Modal Alert -->
+<div class="modal-header" ng-class="moreDetails?'bg-danger':'bg-primary'">
+    <button type="button" class="close" data-dismiss="modal" data-toggle="tooltip" title="Fechar" aria-label="Fechar" ng-click="dismissDialog()"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">
+        <i class='fa fa-exclamation-triangle'></i>
+       {{modalOptions ? modalOptions.headerText : title }}
+    </h4>
+</div>
+<div class="modal-body">
+    <h4 class="text-center text-primary">
+        <p ng-repeat="line in message track by $index" ng-class="$odd>0?'lead':''">{{line}}</p>
+       	<p ng-if="modalOptions.bodyText" >{{modalOptions.bodyText}}</p>    
+    </h4>
+     <div class="collapse" id="AlertStackMessage">
+        <label>Causa:</label>
+        <textarea rows="5" ng-model="moreDetails" class="form-control noresize" placeholder="Informe aqui suas observações sobre esta ocorrência" readonly></textarea>
+    </div>
+    <div class="text-center">{{cause}}</div>
+    <div class="alert alert-success ng-hide text-center" ng-show="successMessage">
+        <i class="glyphicon glyphicon-thumbs-up"></i>&nbsp;{{successMessage}}
+    </div>
+    <div class="alert alert-warning text-center" class="ng-hide" ng-show="errorMessage">
+        <button type="button" class="close" ng-click="errorMessage=null">�</button>
+        <i class="fa fa-warning">&nbsp;</i>&nbsp;<span>{{errorMessage}}</span>
+    </div>
+</div>
+<div class="modal-footer" id="AlertFooter">
+    <button class="btn btn-default pull-left ng-hide" ng-show="stackButton" type="button" data-toggle="collapse" data-target="#AlertStackMessage" aria-expanded="false" aria-controls="AlertStackMessage">
+        <i class="fa fa-caret-square-o-down">&nbsp;</i>
+        <span class="hidden-xs">Mais detalhes</span>
+    </button>
+    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="modalOptions ? modalOptions.ok() :dismissDialog()">
+        <i class='fa fa-times'></i>&nbsp;
+        OK
+    </button>
+</div>

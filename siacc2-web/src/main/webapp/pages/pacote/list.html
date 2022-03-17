@@ -1,0 +1,123 @@
+<div id="content" 
+class="app-content" 
+role="main"
+	ng-controller="PacoteListController">
+	<div class="box"> 
+			<div class="box-cell" ng-init="listar()"> 
+					<div class="card">
+						<div class="card-heading">
+							<h2>Listar Pacote</h2>
+						</div>
+						<div class="card-body"  >
+ 
+							<table 
+								class="table table-striped"
+								st-table="displayDataFull"
+								st-safe-src="listaPacoteFull"  > 
+								<thead class="theme-main-table-head">
+									<tr class="bg-white hidden-print exclude">
+										<th colspan="8">
+											<div class="col-md-2 m-l-md-n">
+												<div class="md-form-group">
+													<select
+														ng-options="option.name for option in pageOptions track by option.value"
+														ng-model="itemsOnPage" class="md-input"></select> <label>Resultados
+														por p&aacute;gina</label>
+												</div>
+											</div>
+											<div class="col-md-2 pull-right m-r-md-n ">
+												<div class="md-form-group">
+													<input st-search  class="md-input text-uppercase"  type="text" maxlength="165"   /> <label>Filtro</label>
+													<span class="pull-right"> <a data-toggle="collapse" data-target="#filtroAvancado" role="button" aria-expanded="false" aria-controls="collapseExample">
+																		    Filtro Avançado
+																		  </a></span>	
+												</div>
+												
+											</div>
+										</th>
+									</tr> 
+									<tr>
+										<td colspan="5" >										
+											<div class="collapse" id="filtroAvancado">
+											  <div class="painel-div">
+											    		 <div class="form-group row">
+							
+							
+															<div class="col-sm-4">
+																<div>
+																	<label>Tipo de Compromisso</label> <select
+																		class="form-control" >
+																		<option>teste 1</option>
+																		<option>teste 2</option>
+																		<option>teste 3</option>
+																		<option>teste 4</option>
+																		<option>teste 5</option>
+																	</select>
+																</div>
+															</div>
+							
+															 
+											  </div>
+											  
+											  <div> 
+														<button id="btnConfirmar"
+															class="btn btn-fw btn-success waves-effect bDow downloadB hidden-print" 
+															title="Consultar" data-toggle="tooltip">
+															<i class="fas fa-share-square m-r-xs"></i> Consultar
+														</button>
+													</div>
+												</div>
+											</div>
+																			
+										</td> 	
+									</tr>
+									
+									 <tr>
+										<th class="text-left " st-sort="compromisso">Compromisso</th> 
+										<th class="text-left " st-sort="pacote">Nome Pacote</th>
+										<th class="text-left " st-sort="dataInclusao">Data de Inclusão</th> 
+										<th class="col-xs-1 text-center exclude"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="row in displayDataFull "> 
+										<td>{{zeroEsquerda(row.nuTipoCompromisso,4)}}  - {{row.nomeTipoCompromisso}}</td> 
+										<td>{{row.nuPacote}} - {{row.nomePacote}}</td>
+										<td>{{row.inicioVigencia | date: 'dd/MM/yyyy' }}</td> 
+										<td> 
+											<button
+												ng-click="openViewPaginaParam('pacote/manutencao', {nuTipoCompromisso: row.nuTipoCompromisso,  nuPacote: row.nuPacote})"
+												class="btn btn-icon-xs btn-icon btn-rounded btn-primary waves-effect" data-placement="left">
+												<i class="fa fa-arrow-right fa-xs"></i>
+											</button>
+										</td> 
+									</tr>
+								</tbody>
+								<tfoot>
+									 	<tr>
+										<td colspan="8"
+											class="text-center hidden-print exclude"> 
+											<div st-pagination="" st-items-by-page="itemsOnPage.value"
+												st-displayed-pages="7" class="pull-right"></div>
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+							<div class="alert alert-warning ng-hide"
+								ng-show="listaPacoteFull == undefined || listaPacoteFull.length ==0">Nenhum dado localizado.</div>
+						</div>
+						<div class="card form-action hidden-print">
+
+							<button id="btnConfirmar"
+								class="btn btn-fw btn-success waves-effect bDow downloadB hidden-print"
+								ng-click="openViewPagina('pacote/incluir')"
+								title="Incluir" data-toggle="tooltip">
+								<i class="fas fa-share-square m-r-xs"></i> Incluir
+							</button>
+						</div>
+					</div>
+				</div>
+			</div> 
+	</div>
+ 
+

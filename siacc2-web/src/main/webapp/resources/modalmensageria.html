@@ -1,0 +1,14 @@
+<!-- Modal Alert -->
+<div ng-controller="MensageriaController" ng-init="incluirMensagemSistemaExibida(modalOptions.numeroMensagem)">
+	 
+	<div class="modal-body">
+	    <div id="cpoMensageria" ng-bind-html="trustAsHtml(modalOptions.bodyText)" > 
+	    </div> 
+	</div>
+	 
+	<div class="modal-footer">	 
+	    <button type='button'  class="btn btn-default" data-dismiss="modal" ng-click="modalOptions.ok();">
+	       <i class="fa fa-check m-rxs">&nbsp;</i>	OK
+	    </button>
+	</div>
+</div>

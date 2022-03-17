@@ -1,0 +1,19 @@
+<!-- Modal Alert -->
+<div class="modal-header bg-info">
+    <button type="button" class="close" data-dismiss="modal" data-toggle="tooltip" title="Fechar" aria-label="Fechar" ng-click="dismissDialog()"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">{{modalOptions ? modalOptions.headerText : title }}</h4>
+</div>
+<div class="modal-body">
+    <h4 id="AlertMessage" class="text-center">    	
+		<p ng-repeat="line in message track by $index" ng-class="$odd>0?'lead':''"  ng-if="!modalOptions.bodyText">{{line}}</p>    
+		<p ng-if="modalOptions.bodyText" >{{modalOptions.bodyText}}</p>    
+    </h4>
+</div>
+<div class="modal-footer">
+	<button type='button' class='btn btn-default' data-dismiss="modal" ng-click="modalOptions ? modalOptions.close() :dismissDialog()">
+        <i class='fa fa-times'></i>&nbsp;N&atilde;o
+    </button>
+    <button type='button' class='btn btn-info' data-dismiss="modal" ng-click="modalOptions ? modalOptions.ok() :closeDialog()">
+        <i class='fa fa-check'></i>&nbsp;Sim
+    </button>
+</div>

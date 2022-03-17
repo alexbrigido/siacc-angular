@@ -1,0 +1,82 @@
+<div class="navbar md-whiteframe-z1 no-radius blue header-caixa">
+	<a md-ink-ripple  data-toggle="modal" data-target="#aside" class="navbar-item pull-left visible-xs visible-sm"><i class="mdi-navigation-menu i-24"></i></a>
+	<h4 class="navbar-item pull-left hidden-sm hidden-xs">SIACC
+	</h4>
+	<ul class="nav nav-sm navbar-tool pull-right">
+	 
+		<li>
+			<a data-toggle="modal" data-target="#user">
+				<i class="mdi-social-person-outline i-24" title="Visualizar dados do usuário logado" data-toggle="tooltip" data-placement="bottom"></i>
+				<div class="md-ripple-container"></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" data-toggle="modal" data-target="#sair-sistema" >
+				<i class="mdi-action-highlight-remove i-24" alt="fechar" title="Sair do sistema" data-toggle="tooltip" data-placement="bottom"></i>
+			</a>
+		</li>
+	</ul>
+	<div class="pull-right" ui-view="navbar@"></div>
+</div>
+
+<div class="modal fade" id="user" data-backdrop="false">
+	<div class="right modal-user bg-white md-whiteframe-z2">
+    	<div class="box">
+			<div class="p p-h-md">
+		   		<a data-dismiss="modal" class="pull-right text-muted-lt text-2x m-t-n inline p-sm">&times;</a>
+		      	<strong>Usuário</strong>
+		    </div>
+		    <div class="box-row">
+		    	<div class="box-cell">
+		        	<div class="box-inner menu-user-height">
+		          		<div class="list-group no-radius no-borders">
+		            		<a data-toggle="modal" data-target="#user" data-dismiss="modal"  class="list-group-item p-h-md">
+		               			<div class="clear">
+					            	<span class="font-bold block">{{nomeUsuarioLogado}}</span>
+					                <span class="clear text-ellipsis text-xs">Inscrição: {{matricula}}</span> 
+							  	</div>
+		            		</a>
+				       	</div>
+				  	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+ 
+<div class="modal fade" id="sair-sistema" data-backdrop="false">
+	<div class="right modal-user bg-white md-whiteframe-z2">
+    	<div class="box">
+			<div class="p p-h-md">
+		   		<a data-dismiss="modal" class="pull-right text-muted-lt text-2x m-t-n inline p-sm">&times;</a>
+		      	<strong>Deseja realmente sair?</strong>
+		    </div>
+       		<div class="row m-t-lg">
+       			<div class="col-xs-12 text-center"  >
+       				<button data-toggle="modal" data-target="#sair-sistema" data-dismiss="modal"  class="btn btn-fw btn-primary waves-effect">
+               			Não
+            		</button>
+       				<button ng-click="logout()" class="btn btn-fw btn-default waves-effect" >
+               			Sim
+            		</button>
+       			</div>
+       		</div>
+		</div>
+	</div>
+</div>
+ <div ng-show="menuHeader!=null">
+
+	<ul class="breadcrumb bg-white   hidden-print headerMenu" >
+		<li><a ng-controller="MenuController"  ng-click="openViewPagina('principal')">
+			<iclass="mdi-action-dashboard m-r-xs"></i> {{siglaProjeto}} </a>
+		</li>
+		<li ng-repeat="lk in menuHeader">
+			<a  ng-show="lk.link==''">{{lk.item}}</a>
+			<a  ng-show="lk.link!=''" ng-click="openViewPagina(lk.link)">{{lk.item}}</a>
+		</li> 
+	</ul>
+</div>
+
+

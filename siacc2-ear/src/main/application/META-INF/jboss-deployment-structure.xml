@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.1">
+	<ear-subdeployments-isolated>false</ear-subdeployments-isolated>
+	<sub-deployment name="siacc2-ejb.jar">
+		<dependencies>
+			<module name="javax.ws.rs.api" />
+		</dependencies>
+	</sub-deployment>
+	<sub-deployment name="siacc2-web.war">
+		<dependencies>
+			<module name="javax.ws.rs.api" />
+			<module name="org.apache.commons.codec" />
+			<module name="org.jboss.resteasy.resteasy-cdi" />
+			<module name="org.jboss.resteasy.resteasy-jaxrs" />
+		</dependencies>
+	</sub-deployment>
+
+</jboss-deployment-structure>
