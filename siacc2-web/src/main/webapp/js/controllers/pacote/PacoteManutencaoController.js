@@ -15,28 +15,69 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 	$scope.dateMultiple = [];
 
 	vm.init = function() {
-	//	vm.clear();
+		vm.clear();
 		vm.consultaTipoCompromisso();
 	}
 
 	vm.consultaTipoCompromisso = function() {
-		pacoteservice.cboTipoCompromisso().then(function(res) {
-			if (res != null && res != undefined) {
-				vm.dataTipoCompromisso = res.data[0];
-			} else {
+
+		vm.dataTipoCompromisso = [
+			{
+				nuTipoCompromisso: 1,
+				nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR'
+			},
+			{
+				nuTipoCompromisso: 2,
+				nomeTipoCompromisso: 'PAGAMENTO DE SALARIO'
 			}
-		})
+		];
+		
+		vm.dataPacote = [
+				{
+					nuPacote: 1,
+					nomePacote: 'Pacote 01',
+					nuTipoCompromisso: 1,
+					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
+					inicioVigencia: '22/03/2022'
+					
+				},
+				{
+					nuPacote: 2,
+					nomePacote: 'Pacote 02',
+					nuTipoCompromisso: 1,
+					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
+					inicioVigencia: '22/03/2022'
+				}
+			];
 	}
 
 	vm.consultaPacote = function(tipoCompromisso) {
-		vm.clear();
+		//vm.clear();
+		/*
 		pacoteservice.cboPacote(tipoCompromisso).then(
 				function(res) {
 					if (res != null && res != undefined) {
 						vm.dataPacote = res.data[0];
 					} else {
 					}
-				})
+				})*/
+		vm.dataPacote = [
+				{
+					nuPacote: 1,
+					nomePacote: 'Pacote 01',
+					nuTipoCompromisso: 1,
+					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
+					inicioVigencia: '22/03/2022'
+					
+				},
+				{
+					nuPacote: 2,
+					nomePacote: 'Pacote 02',
+					nuTipoCompromisso: 1,
+					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
+					inicioVigencia: '22/03/2022'
+				}
+			];
 	}
 
 	vm.consultCategoria = function(nuTipoCompromisso, pacote) {
@@ -220,31 +261,25 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 
 	var consultarPacote = function(nuTipoCompromisso,nuPacote) {
 
-		vm.nuTipoCompromisso = nuTipoCompromisso; 
-		pacoteservice.cboPacote(nuTipoCompromisso).then(
-		function(res) {
-			if (res != null && res != undefined) {
-				vm.dataPacote = res.data[0];
-				
-				var pesqPacote = vm.dataPacote.map(function(e) {return e.nuPacote;});
-				var retorno = pesqPacote.indexOf(nuPacote);
-									
-				var item =   vm.dataPacote.slice(retorno) ;  
-				vm.itemPacote =   item[0];
-				
-				vm.consultCategoria(nuTipoCompromisso,vm.itemPacote);
-				
-			} else {
-			}
-		}) 
-		
-	
-		
+		vm.dataPacote = [
+				{
+					nuPacote: 1,
+					nomePacote: 'Pacote 01',
+					nuTipoCompromisso: 1,
+					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
+					inicioVigencia: '22/03/2022'
+					
+				},
+				{
+					nuPacote: 2,
+					nomePacote: 'Pacote 02',
+					nuTipoCompromisso: 1,
+					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
+					inicioVigencia: '22/03/2022'
+				}
+			];
+
 	}
-	if ($stateParams.nuTipoCompromisso!=null && $stateParams.nuPacote!=null ){ 		
-		consultarPacote($stateParams.nuTipoCompromisso,$stateParams.nuPacote);
-	}
-	
 	
 	var number = 0;
 	vm.addIndex = function() {

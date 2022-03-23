@@ -10,13 +10,11 @@
 					<div class="card-body">
 
 						<div class="form-group row">
-
-
 							<div class="col-sm-4">
 								<div>
-									<label>Tipo de Compromisso</label> <select
-										ng-model="ctrl.nuTipoCompromisso" class="form-control"
-										ng-change="ctrl.consultaPacote(ctrl.nuTipoCompromisso)">
+									<label>Tipo de Compromisso</label> 
+									<select
+										ng-model="ctrl.nuTipoCompromisso" class="form-control">
 										<option value="">Selecione...</option>
 										<option
 											ng-selected="ctrl.nuTipoCompromisso == item.nuTipoCompromisso"
@@ -27,19 +25,15 @@
 									</select>
 								</div>
 							</div>
-
 							<div class="col-sm-4">
 								<div>
 									<label>Pacote Base</label>
-									<ui-select ng-model="ctrl.itemPacote"
-										on-select="ctrl.consultCategoria(ctrl.nuTipoCompromisso, ctrl.itemPacote)">
-									<ui-select-match placeholder="Selecione...">
-									{{zeroEsquerda($select.selected.nuPacote,9)}} -
-									{{$select.selected.nomePacote}}</ui-select-match> <ui-select-choices
-										repeat="item in ctrl.dataPacote | filter: $select.search">
-
-									<small> {{zeroEsquerda(item.nuPacote,9)}} -
-										{{item.nomePacote}} </small> </ui-select-choices> </ui-select>
+									<select ng-model="ctrl.itemPacote" class="form-control">
+										<option value="">Selecione...</option>
+										<option ng-repeat="item in ctrl.dataPacote">
+											{{zeroEsquerda(item.nuPacote, 9)}} - {{item.nomePacote}}
+										</option> 
+									</select>
 								</div>
 							</div>
 						</div>
@@ -52,10 +46,16 @@
 										type="text" placeholder="" />
 								</div>
 							</div>
+							<div class="col-md-4">
+								<div>
+									<label for="nomePacote">Data Criação</label>
+									<input class="form-control form-control-lg" id="dataCriacao"
+										type="text" placeholder="23/03/2022" value="23/03/2022" />
+								</div>
+							</div>
 						</div>
 
-						<ul class="nav nav-tabs" id="myTab" role="tablist"
-							ng-show="ctrl.exbirAbas">
+						<ul class="nav nav-tabs" id="myTab" role="tablist">
 							<li class="nav-item active"><a class="nav-link active"
 								id="home-tab" data-toggle="tab" data-target="#tab1" role="tab"
 								aria-controls="home" aria-selected="true">Serviço</a></li>
@@ -66,8 +66,7 @@
 								data-toggle="tab" data-target="#tab3" role="tab"
 								aria-controls="contact" aria-selected="false">Lançamento</a></li>
 						</ul>
-						<div class="tab-content" id="myTabContent"
-							ng-show="ctrl.exbirAbas">
+						<div class="tab-content" id="myTabContent">
 							<div class="tab-pane fade active in" id="tab1" role="tabpanel"
 								aria-labelledby="home-tab">
 
@@ -81,7 +80,7 @@
 
 							</div>
 							<div class="tab-pane fade" id="tab3" role="tabpanel"
-								aria-labelledby="home-tab" ng-show="ctrl.exbirAbas">
+								aria-labelledby="home-tab">
 								<ng-include
 									src="'./pages/pacote/tab/tabLancamentoHistorico.html'"></ng-include>
 
