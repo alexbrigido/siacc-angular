@@ -11,8 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import br.gov.caixa.siacc.config.DatabaseConfig;
+
 @Entity
-@Table(name="ACCXTB40TIPOCMPRSO")
+@Table(name="ACCXTB40TIPOCMPRSO", schema = DatabaseConfig.ESQUEMA_BANCO)
 public class TipoCompromissoModel   implements Serializable{
 
 	/**

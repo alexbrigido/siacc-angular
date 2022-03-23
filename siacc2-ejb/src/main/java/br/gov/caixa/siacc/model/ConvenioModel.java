@@ -14,9 +14,11 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import br.gov.caixa.siacc.config.DatabaseConfig;
+
  
 @Entity	
-@Table(name = "ACCXTB30CONVENIO")
+@Table(name = "ACCXTB30CONVENIO", schema = DatabaseConfig.ESQUEMA_BANCO)
 public class ConvenioModel implements  Serializable {
 
 	private static final long serialVersionUID = -1791037969168612027L;

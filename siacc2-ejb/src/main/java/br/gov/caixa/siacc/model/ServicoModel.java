@@ -9,6 +9,7 @@ import javax.persistence.IdClass;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import br.gov.caixa.siacc.config.DatabaseConfig;
 import br.gov.caixa.siacc.model.PK.ServicoModelPK;
 
 /***********************************************************************
@@ -18,7 +19,7 @@ import br.gov.caixa.siacc.model.PK.ServicoModelPK;
  ***********************************************************************/
  
 @Entity
-@Table(name = "ACCXTB37SERVICO")
+@Table(name = "ACCXTB37SERVICO", schema = DatabaseConfig.ESQUEMA_BANCO)
 @IdClass(value = ServicoModelPK.class)
 public class ServicoModel  implements Serializable{
 

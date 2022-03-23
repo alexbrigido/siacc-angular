@@ -13,6 +13,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import br.gov.caixa.siacc.config.DatabaseConfig;
+
 /***********************************************************************
  * Module:  PacoteServico.java
  * Author:  joseliano.araujo
@@ -21,7 +23,7 @@ import javax.persistence.Transient;
 
 
 @Entity
-@Table(name="ACCXTB80PCTESRVCO")
+@Table(name="ACCXTB80PCTESRVCO", schema = DatabaseConfig.ESQUEMA_BANCO)
 public class PacoteServicoModel  implements Serializable {
 
 	/**

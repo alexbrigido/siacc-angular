@@ -47,7 +47,7 @@ public class ConvenioDao extends AbstractDao<ConvenioModel>{
 			  jpql.append("         ( select  dense_rank() OVER (ORDER BY TB30.dt_inclusao desc, TB30.NU_CONVENIO) as rownumber , ");
 			  jpql.append("             TB30.*   ");
 			  jpql.append("         from ");
-			  jpql.append("             ACCXTB30CONVENIO TB30  ");
+			  jpql.append("             SIACC.ACCXTB30CONVENIO TB30  ");
 			  jpql.append("         order by ");
 			  jpql.append("            TB30.dt_inclusao desc, TB30.NU_CONVENIO fetch first 1000 rows only ) as w ) as TB30w1  ");
 			  jpql.append("     where ");

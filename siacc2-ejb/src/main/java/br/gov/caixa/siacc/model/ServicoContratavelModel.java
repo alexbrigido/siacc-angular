@@ -18,10 +18,11 @@ import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import br.gov.caixa.siacc.config.DatabaseConfig;
 import br.gov.caixa.siacc.model.PK.ServicoContratavelPK;
 
 @Entity
-@Table(name = "ACCXTB39SRVCOCNTRL")
+@Table(name = "ACCXTB39SRVCOCNTRL", schema = DatabaseConfig.ESQUEMA_BANCO)
 @IdClass(value = ServicoContratavelPK.class)
 public class ServicoContratavelModel implements Serializable {
 

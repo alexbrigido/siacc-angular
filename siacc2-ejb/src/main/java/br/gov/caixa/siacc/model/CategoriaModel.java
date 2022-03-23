@@ -9,8 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import br.gov.caixa.siacc.config.DatabaseConfig;
+
 @Entity
-@Table(name = "ACCXTB27CATEGORIA")
+@Table(name = "ACCXTB27CATEGORIA", schema = DatabaseConfig.ESQUEMA_BANCO)
 public class CategoriaModel implements Serializable {
  
 	private static final long serialVersionUID = -3968083909867533003L;
