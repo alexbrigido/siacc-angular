@@ -78,51 +78,6 @@
 			<version>2.0</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<scope>test</scope>
-			<version>5.14.6</version>
-		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-server</artifactId>
-			<scope>test</scope>
-			<version>2.44.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-asl</artifactId>
-			<version>1.9.9</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-jaxrs</artifactId>
-			<version>1.9.9</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.9</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-xc</artifactId>
-			<version>1.9.9</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.axis</groupId>
-			<artifactId>axis</artifactId>
-			<version>1.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>javax.xml</groupId>
-			<artifactId>jaxrpc-api</artifactId>
-			<version>1.1</version>
-		</dependency>
 
 		<dependency>
 			<groupId>com.auth0</groupId>
@@ -144,12 +99,6 @@
 
 		</dependency>
 
-		<dependency>
-			<groupId>axis</groupId>
-			<artifactId>axis-wsdl4j</artifactId>
-			<version>1.5.1</version>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
 		<dependency>
 			<groupId>commons-codec</groupId>
@@ -157,8 +106,6 @@
 			<version>1.9</version>
 			<scope>provided</scope>
 		</dependency>
-
-
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -177,17 +124,6 @@
 			<artifactId>resteasy-jaxrs</artifactId>
 			<version>3.6.0.Final</version>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.powermock</groupId>
-			<artifactId>powermock-api-mockito</artifactId>
-			<version>1.5.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.powermock</groupId>
-			<artifactId>powermock-module-junit4</artifactId>
-			<version>1.5.1</version>
 		</dependency>
  	 
 	</dependencies>
@@ -228,10 +164,6 @@
 						<usr.sisgr>${usr.sisgr}</usr.sisgr>
 						<pwd.sisgr>${pwd.sisgr}</pwd.sisgr>
 					</systemPropertyVariables>
-					<suiteXmlFiles>
-						<!-- Suite file injection parameter from command line -->
-						<suiteXmlFile>src\test\resources\testng.xml</suiteXmlFile>
-					</suiteXmlFiles>
 					<properties>
 						<property>
 							<name>usedefaultlisteners</name>
