@@ -230,7 +230,7 @@
 					</thead>
 					<tr ng-repeat="listaServico in ctrl.listaTarifaContratadaFull  | orderBy:'nuCategoria' | orderBy:'nuServico'"  ng-init="endIndex = endIndex+1 ">
 						<td class="tableBoxTD">{{listaServico.deServico}}  </td>
-						<td><input class="form-control" disabled="disabled">{{formatReal(listaServico.vrBruto)}}</td>
+						<td><input class="form-control" disabled="disabled" value={{formatReal(listaServico.vrBruto)}}></td>
 						<td><input class="form-control"  style="text-align: right" ng-change="ctrl.calcularTarifaDesejada(listaServico)" ng-blur="ctrl.validarCalculo(listaServico); ctrl.calcularValorTotalTarifa(); " ng-model="listaServico.vrDesejado" type="number" /></td>
 						<td><input class="form-control decimal-inputmask" percentage-Field 
 						placeholder="%" 
@@ -247,8 +247,6 @@
 						</tr>
 					</tfoot>
 					 
-
-
 				</table>
 			</div>
 		</div>
