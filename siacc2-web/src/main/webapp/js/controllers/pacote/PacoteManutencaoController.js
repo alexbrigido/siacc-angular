@@ -49,6 +49,24 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 					inicioVigencia: '22/03/2022'
 				}
 			];
+		
+		vm.listaPacoteFull = [
+				{
+					nuPacote: 1,
+					nomePacote: 'Pacote 01',
+					nuTipoCompromisso: 1,
+					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
+					inicioVigencia: '22/03/2022'
+					
+				},
+				{
+					nuPacote: 2,
+					nomePacote: 'Pacote 02',
+					nuTipoCompromisso: 1,
+					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
+					inicioVigencia: '22/03/2022'
+				}
+			];
 	}
 
 	vm.consultaPacote = function(tipoCompromisso) {
@@ -315,28 +333,6 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 		if ((tarifa.vrDesejado == 0) && (tarifa.vrDesconto == 0)) {
 			tarifa.vrTarifaContrada = tarifa.vrBruto.toFixed(2);
 		}
-	}
-
-	var consultarPacote = function(nuTipoCompromisso,nuPacote) {
-
-		vm.dataPacote = [
-				{
-					nuPacote: 1,
-					nomePacote: 'Pacote 01',
-					nuTipoCompromisso: 1,
-					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
-					inicioVigencia: '22/03/2022'
-					
-				},
-				{
-					nuPacote: 2,
-					nomePacote: 'Pacote 02',
-					nuTipoCompromisso: 1,
-					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
-					inicioVigencia: '22/03/2022'
-				}
-			];
-
 	}
 	
 	var number = 0;

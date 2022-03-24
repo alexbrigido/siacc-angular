@@ -2,7 +2,7 @@
 	ng-controller="PacoteManutencaoController as ctrl">
 	<div class="box" ng-init="ctrl.init()">
 		<div class="box-row">
-			
+			<div class="box-inner padding">
 				<div class="card">
 					<div class="card-heading">
 						<h2>Incluir Pacote</h2>
@@ -80,10 +80,10 @@
 
 						<div class="tab-content" id="card-tarifas">
 	
-							<div class="tab-pane fade" id="tab2" role="tabpanel"
-								aria-labelledby="home-tab" ng-show="ctrl.exbirAbas">
+							<div class="tab-pane fade " id="tab2" role="tabpanel"
+								aria-labelledby="home-tab">
 
-								<ng-include src="'./pages/pacote/tab/tabTarifa.html'"></ng-include>
+								<div ng-include="'./pages/pacote/tab/tabTarifa.html'"></div>
 
 							</div>
 
@@ -124,6 +124,7 @@
 
 				</div>
 			
+			</div>			
 		</div>
 	</div>
 </div>

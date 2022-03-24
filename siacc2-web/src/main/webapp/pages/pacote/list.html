@@ -3,7 +3,9 @@ class="app-content"
 role="main"
 	ng-controller="PacoteListController">
 	<div class="box"> 
-			<div class="box-cell" ng-init="listar()"> 
+	<div class="box-row">
+			<div class="box-cell" ng-init="listar()">
+			<div class="box-inner padding"> 
 					<div class="card">
 						<div class="card-heading">
 							<h2>Listar Pacote</h2>
@@ -38,26 +40,35 @@ role="main"
 									</tr> 
 									<tr>
 										<td colspan="5" >										
-											<div class="collapse" id="filtroAvancado">
+											<div class="collapse.show" id="filtroAvancado">
 											  <div class="painel-div">
-											    		 <div class="form-group row">
-							
+											  			<h4>Pesquisar Pacote: </h4>
+											  			
+											    	<div class="form-group row">
 							
 															<div class="col-sm-4">
 																<div>
-																	<label>Tipo de Compromisso</label> <select
-																		class="form-control" >
-																		<option>teste 1</option>
-																		<option>teste 2</option>
-																		<option>teste 3</option>
-																		<option>teste 4</option>
-																		<option>teste 5</option>
+																	<label>Tipo de Compromisso</label>
+																	<select class="form-control" >
+																		<option>Selecione...</option>
+																		<option>01 - PAGAMENTO A FORNECEDOR</option>
+																		<option>02 - PAGAMENTO DE SALÁRIO</option>
 																	</select>
 																</div>
 															</div>
 							
+															<div class="col-sm-4">
+																<div>
+																	<label>Pacote</label>
+																	<select class="form-control" >
+																		<option>Selecione...</option>
+																		<option>01 - PACOTE TESTE</option>
+																		<option>02 - PACOTE PAGAMENTO XPTO</option>
+																	</select>
+																</div>
+															</div>
 															 
-											  </div>
+											  		</div>
 											  
 											  <div> 
 														<button id="btnConfirmar"
@@ -116,6 +127,12 @@ role="main"
 							</button>
 						</div>
 					</div>
+					
+					
+					
+					
+				</div>					
+				</div>
 				</div>
 			</div> 
 	</div>

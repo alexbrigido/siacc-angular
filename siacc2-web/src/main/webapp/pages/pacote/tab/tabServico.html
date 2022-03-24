@@ -2,6 +2,7 @@
 <div ng-init="start = 0; endIndex = 0">
 	<!-- inicio servico -->
 	<div ng-repeat="listaCategoria in ctrl.listaCategoriaFull"  ng-init="endIndex = endIndex+1 ">
+	
 		<div class="panel panel-default">
 			
 			<div class="panel-heading">
@@ -14,20 +15,22 @@
 			<div id="categora{{$index}}">
 				<div class="panel-body">  
 					<div class="form-check"  ng-repeat="listaServico in listaCategoria.servicos | orderBy:'nuServico' "   ng-init="id = ctrl.addIndex()">
+						
 						<label class="el-switch"> 
 							<input type="checkbox"   
 							   ng-model="{{ctrl.servicos[id].icSelecionado}}" 
 							   value="{{listaServico.nuServico}}"
 						 	   checked="{{ctrl.servicos[id].icSelecionado}}" 
-							   ng-change="ctrl.validarCheck(ctrl.servicos[id], listaCategoria.nuCategoria); ctrl.validarServicoTarifa(ctrl.servicos[id])"
-							> 
+							   ng-change="ctrl.validarCheck(ctrl.servicos[id], listaCategoria.nuCategoria); ctrl.validarServicoTarifa(ctrl.servicos[id])"> 
 							<span class="el-switch-style">  </span>
-						</label> <span class="margin-r">{{listaServico.deServico}} </span>
+						</label> 
+						<span class="margin-r">{{listaServico.deServico}} </span>
 					</div>
- 
 				</div>
 			</div>
+			
 		</div> 
 	</div>
+	
 </div>
-  
+

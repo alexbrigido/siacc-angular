@@ -36,6 +36,20 @@ webapp.controller('PacoteListController', function($scope,$q, $rootScope, whttp,
 					nuTipoCompromisso: 1,
 					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
 					inicioVigencia: '22/03/2022'
+				},
+				{
+					nuPacote: 3,
+					nomePacote: 'Pacote Tres',
+					nuTipoCompromisso: 1,
+					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
+					inicioVigencia: '23/03/2022'
+				},
+				{
+					nuPacote: 4,
+					nomePacote: 'Pacote Teste',
+					nuTipoCompromisso: 1,
+					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
+					inicioVigencia: '24/03/2022'
 				}
 			]
 		
