@@ -6,22 +6,22 @@
 			
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a data-toggle="collapse" data-parent="#categora{{$index}}" data-target="#categora{{$index}}">
+					<a data-parent="#categora{{$index}}" data-target="#categora{{$index}}" >
 						{{zeroEsquerda(listaCategoria.nuCategoria,4)}} - {{listaCategoria.deCategoria}} </a>
 				</h4>
 			</div>
  
-			<div id="categora{{$index}}" ng-class="$index=='0' ? ' in': ''" class="panel-collapse collapse ">
+			<div id="categora{{$index}}">
 				<div class="panel-body">  
-					<div class="form-check"  ng-repeat="listaServico in listaCategoria.servicos | orderBy:'nuServico' "   ng-init="id = ctrl.addIndex()" >
+					<div class="form-check"  ng-repeat="listaServico in listaCategoria.servicos | orderBy:'nuServico' "   ng-init="id = ctrl.addIndex()">
 						<label class="el-switch"> 
 							<input type="checkbox"   
-							   ng-model="ctrl.servicos[id].icSelecionado" 
+							   ng-model="{{ctrl.servicos[id].icSelecionado}}" 
 							   value="{{listaServico.nuServico}}"
-						 	   ng-checked="ctrl.servicos[id].icSelecionado" 
+						 	   checked="{{ctrl.servicos[id].icSelecionado}}" 
 							   ng-change="ctrl.validarCheck(ctrl.servicos[id], listaCategoria.nuCategoria); ctrl.validarServicoTarifa(ctrl.servicos[id])"
 							> 
-							<span class="el-switch-style"></span>
+							<span class="el-switch-style">  </span>
 						</label> <span class="margin-r">{{listaServico.deServico}} </span>
 					</div>
  

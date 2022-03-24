@@ -2,8 +2,7 @@ var webapp = angular.module('webApp');
 webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $stateParams, $q, pacoteservice, whttp) {
 	var vm = this;
 
-	$scope.today = moment();
-	moment.lang('pt');
+	$scope.today = moment().locale('pt-br').format('L');
   
 	vm.servicos = [];
 	vm.nuTipoCompromisso = "";
@@ -17,6 +16,7 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 	vm.init = function() {
 		vm.clear();
 		vm.consultaTipoCompromisso();
+		vm.consultCategoria();
 	}
 
 	vm.consultaTipoCompromisso = function() {
@@ -80,63 +80,121 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 			];
 	}
 
-	vm.consultCategoria = function(nuTipoCompromisso, pacote) {
-		consultCategoria(nuTipoCompromisso, pacote).then(
-				function(res) {
 
-					vm.nuTipoCompromisso = nuTipoCompromisso;
-					vm.pacote = pacote;
-
-					consultTarifaContratada(nuTipoCompromisso,pacote).then(function(res) {
-						vm.exbirAbas = true;
-					})
-
-				})
-	}
-
-	var consultCategoria = function(nuTipoCompromisso, pacote) {
-		var deferred = $q.defer();
-
-		vm.qtDiaFloat = pacote.qtDiaFloat;
-		vm.qtdiaFloatTarifa = pacote.qtdiaFloatTarifa;
-
-		pacoteservice.consultarCategoria(nuTipoCompromisso,pacote.nuPacote)
-				.then(function(res) {
-							if (res != null && res != undefined) {
-								vm.listaCategoriaFull = res.data[0];
-								console.log("listaCategoriaFull ", vm.listaCategoriaFull)
-
-								vm.listaCategoriaFull.forEach(function(item,indice) {
-											item.servicos.forEach(function(s,si) {
-														var row = {
-															"icSelecionado" : s.icSelecionado,
-															"nuServico" : s.nuServico,
-															"nuCategoria" : s.nuCategoria,
-															"deServico" : s.deServico,
-															"deServicoReduzido" : s.deServicoReduzido,
-															"icCentroCusto" : s.icCentroCusto,
-															"nomeCategoria" : item.deCategoria,
-															"icTarifa" : s.icTarifa,
-															"vrBruto" : s.vrBruto,
-															"vrCusto" : s.vrCusto,
-															"vrDesconto" : s.vrDesconto,
-															"vrDesejado" : s.vrDesejado,
-															"vrReceita" : s.vrReceita,
-															"vrTarifaContrada" : s.vrTarifaContrada
-														};
-														vm.servicos.push(row);
-													})
-										})
-								deferred.resolve(true);
-							} else {
-							}
-							
-						}, function(request, status, err) {
-							var erro = err;
-							deferred.reject(false)
-						})
-
-		return deferred.promise;
+	vm.consultCategoria = function() {
+		
+		vm.listaCategoriaFull = [
+			{
+				nuCategoria: 1,
+				deCategoria: 'FORMA DE PAGAMENTO',
+				servicos: [
+					{
+						icSelecionado : 'true',
+						nuServico : 1,
+						nuCategoria : 1,
+						deServico : 'DOC',
+						deServicoReduzido : 'DOC',
+						icCentroCusto : 'F',
+						icTarifa : 'F',
+						vrBruto : 0.32,
+						vrCusto : 0.30,
+						vrDesconto : 0.00,
+						vrDesejado : 0.00,
+						vrReceita : 0.23,
+						vrTarifaContrada : 0.00
+					},
+					{
+						icSelecionado : 'true',
+						nuServico : 2,
+						nuCategoria : 1,
+						deServico : 'COBRANCA CAIXA',
+						deServicoReduzido : 'COBRANCA CAIXA',
+						icCentroCusto : 'F',
+						icTarifa : 'F',
+						vrBruto : 0.32,
+						vrCusto : 0.30,
+						vrDesconto : 0.00,
+						vrDesejado : 0.00,
+						vrReceita : 0.23,
+						vrTarifaContrada : 0.00
+					},
+					{
+						icSelecionado : true,
+						nuServico : 8,
+						nuCategoria : 1,
+						deServico : 'TED',
+						deServicoReduzido : 'TED',
+						icCentroCusto : 'F',
+						icTarifa : 'F',
+						vrBruto : 0.32,
+						vrCusto : 0.30,
+						vrDesconto : 0.00,
+						vrDesejado : 0.00,
+						vrReceita : 0.23,
+						vrTarifaContrada : 0.00
+					},
+				]
+			},
+			{
+				nuCategoria: 2,
+				deCategoria: 'FORMA DE TRANSMISSAO E RECEPCAO',
+				servicos: [
+					{
+						icSelecionado : true,
+						nuServico : 11,
+						nuCategoria : 2,
+						deServico : 'VIA VAN',
+						deServicoReduzido : 'VIA VAN'
+					},
+					{
+						icSelecionado : true,
+						nuServico : 12,
+						nuCategoria : 2,
+						deServico : 'VIA SITE',
+						deServicoReduzido : 'VIA SITE'
+					},
+					{
+						icSelecionado : true,
+						nuServico : 13,
+						nuCategoria : 2,
+						deServico : 'VIA TRANSMISSAO DIRETA',
+						deServicoReduzido : 'VIA TRANSMISSAO DIRETA'
+					},
+					{
+						icSelecionado : true,
+						nuServico : 14,
+						nuCategoria : 2,
+						deServico : 'VIA INTERNET BANKING CXA',
+						deServicoReduzido : 'VIA INTERNET BANKING CXA'
+					},
+					{
+						icSelecionado : 'checked',
+						nuServico : 15,
+						nuCategoria : 2,
+						deServico : 'NENHUM',
+						deServicoReduzido : 'NENHUM'
+					},
+				]
+			},
+			{
+				nuCategoria: 26,
+				deCategoria: 'AUTORIZA AGENDAMENTO VIA IBC',
+				servicos: [
+					{
+						icSelecionado : true,
+						nuServico : 11,
+						nuCategoria : 26,
+						deServico : 'COM AUTORIZACAO'
+					},
+					{
+						icSelecionado : true,
+						nuServico : 15,
+						nuCategoria : 26,
+						deServico : 'NENHUM'
+					},
+				]
+			},
+		];
 	}
 
 	var consultTarifaContratada = function(nuTipoCompromisso,pacote) {
