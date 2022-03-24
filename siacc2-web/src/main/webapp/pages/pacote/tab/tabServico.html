@@ -1,7 +1,7 @@
 
 <div ng-init="start = 0; endIndex = 0">
 	<!-- inicio servico -->
-	<div ng-repeat="listaCategoria in ctrl.listaCategoriaFull"  ng-init="endIndex = endIndex+1 ">
+	<div ng-repeat="listaCategoria in ctrl.listaCategoriaFull"  ng-init="endIndex = endIndex+1">
 	
 		<div class="panel panel-default">
 			
@@ -13,7 +13,7 @@
 			</div>
  
 			<div id="categora{{$index}}">
-				<div class="panel-body">  
+				<div class="panel-body col-sm-6">  
 					<div class="form-check"  ng-repeat="listaServico in listaCategoria.servicos | orderBy:'nuServico' "   ng-init="id = ctrl.addIndex()">
 						
 						<label class="el-switch"> 

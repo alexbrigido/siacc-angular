@@ -235,28 +235,54 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 		];
 	}
 
-	var consultTarifaContratada = function(nuTipoCompromisso,pacote) {
-		var deferred = $q.defer();
+	vm.listaTarifaContratadaFull = [
+					{
+						icSelecionado : 'true',
+						nuServico : 1,
+						nuCategoria : 1,
+						deServico : 'DOC',
+						deServicoReduzido : 'DOC',
+						icCentroCusto : 'F',
+						icTarifa : 'F',
+						vrBruto : 1.49,
+						vrCusto : 0.30,
+						vrDesconto : 0.00,
+						vrDesejado : 0.00,
+						vrReceita : 0.23,
+						vrTarifaContrada : 0.00
+					},
+					{
+						icSelecionado : 'true',
+						nuServico : 2,
+						nuCategoria : 1,
+						deServico : 'COBRANCA CAIXA',
+						deServicoReduzido : 'COBRANCA CAIXA',
+						icCentroCusto : 'F',
+						icTarifa : 'F',
+						vrBruto : 0.32,
+						vrCusto : 0.30,
+						vrDesconto : 0.00,
+						vrDesejado : 0.00,
+						vrReceita : 0.23,
+						vrTarifaContrada : 0.00
+					},
+					{
+						icSelecionado : true,
+						nuServico : 8,
+						nuCategoria : 1,
+						deServico : 'TED',
+						deServicoReduzido : 'TED',
+						icCentroCusto : 'F',
+						icTarifa : 'F',
+						vrBruto : 1.12,
+						vrCusto : 0.30,
+						vrDesconto : 0.00,
+						vrDesejado : 0.00,
+						vrReceita : 0.23,
+						vrTarifaContrada : 0.00
+					}
 
-		vm.qtDiaFloat = pacote.qtDiaFloat;
-		vm.qtdiaFloatTarifa = pacote.qtdiaFloatTarifa;
-
-		pacoteservice.consultarTarifaContratada(nuTipoCompromisso, pacote.nuPacote)
-				.then(
-						function(res) {
-							if (res != null && res != undefined) {
-								vm.listaTarifaContratadaFull = res.data[0];
-								vm.calcularValorTotalTarifa ();
-								deferred.resolve(true);
-							} else {
-							}
-						}, function(request, status, err) {
-							var erro = err;
-							deferred.reject(false);
-						})
-
-		return deferred.promise;
-	}
+		];
 
 	vm.validarCheck = function(obj, ct) {
 		if (ct != 1) {
@@ -270,6 +296,7 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 					})
 		}
 	}
+	
 	vm.validarServicoTarifa = function(ct) {
 		if ((ct.nuCategoria == 1) || (ct.nuCategoria == 21)) {
 			vm.servicos.forEach(function(item, indice) {
