@@ -49,22 +49,28 @@ role="main"
 															<div class="col-sm-4">
 																<div>
 																	<label>Tipo de Compromisso</label>
-																	<select class="form-control" >
-																		<option>Selecione...</option>
-																		<option>01 - PAGAMENTO A FORNECEDOR</option>
-																		<option>02 - PAGAMENTO DE SALÁRIO</option>
-																	</select>
+																	<ui-select ng-model="ctrl.itemTipoCompromisso">
+																		<ui-select-match placeholder="Selecione...">
+																			{{zeroEsquerda($select.selected.nuTipoCompromisso,4)}} - {{$select.selected.nomeTipoCompromisso}}
+																		</ui-select-match> 
+																		<ui-select-choices repeat="item in listaTipoCompromisso | filter: $select.search">
+																			<small> {{zeroEsquerda(item.nuTipoCompromisso,4)}} - {{item.nomeTipoCompromisso}} </small> 
+																		</ui-select-choices> 
+																	</ui-select>
 																</div>
 															</div>
 							
 															<div class="col-sm-4">
 																<div>
 																	<label>Pacote</label>
-																	<select class="form-control" >
-																		<option>Selecione...</option>
-																		<option>01 - PACOTE TESTE</option>
-																		<option>02 - PACOTE PAGAMENTO XPTO</option>
-																	</select>
+																	<ui-select ng-model="ctrl.itemPacote">
+																		<ui-select-match placeholder="Selecione...">
+																			{{zeroEsquerda($select.selected.nuPacote,9)}} - {{$select.selected.nomePacote}}
+																		</ui-select-match> 
+																		<ui-select-choices repeat="item in displayDataFull | filter: $select.search">
+																			<small> {{zeroEsquerda(item.nuPacote,9)}} - {{item.nomePacote}} </small> 
+																		</ui-select-choices> 
+																	</ui-select>
 																</div>
 															</div>
 															 
@@ -96,7 +102,7 @@ role="main"
 										<td>{{row.nuPacote}} - {{row.nomePacote}}</td>
 										<td>{{row.inicioVigencia | date: 'dd/MM/yyyy' }}</td> 
 										<td> 
-											<button
+											<button title="Detalhar"
 												ng-click="openViewPaginaParam('pacote/manutencao', {nuTipoCompromisso: row.nuTipoCompromisso,  nuPacote: row.nuPacote})"
 												class="btn btn-icon-xs btn-icon btn-rounded btn-primary waves-effect" data-placement="left">
 												<i class="fa fa-arrow-right fa-xs"></i>

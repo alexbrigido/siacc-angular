@@ -359,8 +359,8 @@ sup {
 
 .btn-success {
   color: #ffffff !important;
-  background-color: #4caf50;
-  border-color: #4caf50;
+  background-color: #3869CE;
+  border-color: #002A89;
 }
 
 .btn-success:hover,
@@ -373,8 +373,8 @@ sup {
 .btn-success.btn-stroke.active,
 .open .dropdown-toggle.btn-success {
   color: #ffffff !important;
-  background-color: #449d48 !important;
-  border-color: #409343 !important;
+  background-color: #7493D8 !important;
+  border-color: #7493D8 !important;
 }
 
 .btn-success.btn-addon > i {

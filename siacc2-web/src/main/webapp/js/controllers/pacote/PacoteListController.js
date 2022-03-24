@@ -2,29 +2,44 @@ var webapp = angular.module('webApp');
 webapp.controller('PacoteListController', function($scope,$q, $rootScope, whttp, modalService) {
  
 	$scope.dataFull=[]; 
+	$scope.itemPacote = {};
+	
+	$scope.listaTipoCompromisso = [
+			{
+				nuTipoCompromisso: 1,
+				nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR'
+			},
+			{
+				nuTipoCompromisso: 2,
+				nomeTipoCompromisso: 'PAGAMENTO DE SALARIO'
+			},
+			{
+				nuTipoCompromisso: 3,
+				nomeTipoCompromisso: 'AUTO-PAGAMENTO'
+			},
+			{
+				nuTipoCompromisso: 4,
+				nomeTipoCompromisso: 'ORDEM BANCARIA'
+			},
+			{
+				nuTipoCompromisso: 6,
+				nomeTipoCompromisso: 'SALARIOS CAIXA DO TRABALHADOR'
+			},
+			{
+				nuTipoCompromisso: 7,
+				nomeTipoCompromisso: 'FOLHA CAIXA WEB'
+			},
+			{
+				nuTipoCompromisso: 11,
+				nomeTipoCompromisso: 'DEBITO EM CONTA'
+			}
+	];
 	
 	$scope.listar = function() {	
-		// modalService.showAlert("Aten\u00E7\u00E3o", "Usuário sem acesso ao sistema") 
-			
-			/*
-		whttp.get( "ws/pacote/listar")		
-		.then(function(res) { 									
-			if (res != null &&  res != undefined) {				 
-				$scope.listaPacoteFull = res.data[0]; 
-				
-				console.log($scope.listaPacoteFull );
-				
-			}else{ 
-			}
-	    }, function(request, status, err) {
-	    	 
-	    });  
-		 
-			*/
 			$scope.listaPacoteFull = [
 				{
 					nuPacote: 1,
-					nomePacote: 'Pacote 01',
+					nomePacote: 'Pacote DEPOSITO JUDICIAL',
 					nuTipoCompromisso: 1,
 					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
 					inicioVigencia: '22/03/2022'
@@ -32,7 +47,7 @@ webapp.controller('PacoteListController', function($scope,$q, $rootScope, whttp,
 				},
 				{
 					nuPacote: 2,
-					nomePacote: 'Pacote 02',
+					nomePacote: 'Pacote PIX',
 					nuTipoCompromisso: 1,
 					nomeTipoCompromisso: 'PAGAMENTO A FORNECEDOR',
 					inicioVigencia: '22/03/2022'
@@ -54,8 +69,5 @@ webapp.controller('PacoteListController', function($scope,$q, $rootScope, whttp,
 			]
 		
 	}
-	
-	
-	
 	
 });

@@ -29,6 +29,26 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 			{
 				nuTipoCompromisso: 2,
 				nomeTipoCompromisso: 'PAGAMENTO DE SALARIO'
+			},
+			{
+				nuTipoCompromisso: 3,
+				nomeTipoCompromisso: 'AUTO-PAGAMENTO'
+			},
+			{
+				nuTipoCompromisso: 4,
+				nomeTipoCompromisso: 'ORDEM BANCARIA'
+			},
+			{
+				nuTipoCompromisso: 6,
+				nomeTipoCompromisso: 'SALARIOS CAIXA DO TRABALHADOR'
+			},
+			{
+				nuTipoCompromisso: 7,
+				nomeTipoCompromisso: 'FOLHA CAIXA WEB'
+			},
+			{
+				nuTipoCompromisso: 11,
+				nomeTipoCompromisso: 'DEBITO EM CONTA'
 			}
 		];
 		
