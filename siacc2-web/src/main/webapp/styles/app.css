@@ -1864,17 +1864,20 @@ a.list-group-item.hover {
 .card-heading {
   position: relative;
   padding: 14px 18px;
+  background-color: #D3DBED;
 }
 
 .card-heading h2 {
   margin: 0;
   font-size: 18px;
+  background-color: #D3DBED;
 }
 
 .card-heading small {
   display: block;
   margin-top: 8px;
   opacity: 0.5;
+  background-color: #D3DBED;
 }
 
 .card-body {
