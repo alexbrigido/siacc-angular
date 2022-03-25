@@ -140,43 +140,43 @@
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.el-swradio > input[type="checkbox"] {
+.el-swradio > input[type="radio"] {
   display: none;
 }
-.el-swradio > input[type="checkbox"][disabled] + .el-swradio-style {
+.el-swradio > input[type="radio"][disabled] + .el-swradio-style {
   cursor: not-allowed;
   background-color: #D3DCE6;
 }
-.el-swradio > input[type="checkbox"]:checked + .el-swradio-style {
+.el-swradio > input[type="radio"]:checked + .el-swradio-style {
   background-color: #20a0ff;
 }
-.el-swradio > input[type="checkbox"]:checked + .el-swradio-style:before {
+.el-swradio > input[type="radio"]:checked + .el-swradio-style:before {
   left: 50%;
 }
-.el-swradio > input[type="checkbox"]:checked[disabled] + .el-swradio-style {
+.el-swradio > input[type="radio"]:checked[disabled] + .el-swradio-style {
   background-color: #b0d7f5;
 }
-.el-swradio.el-swradio-blue > input[type="checkbox"]:checked + .el-swradio-style {
+.el-swradio.el-swradio-blue > input[type="radio"]:checked + .el-swradio-style {
   background-color: #20a0ff;
 }
-.el-swradio.el-swradio-blue > input[type="checkbox"]:checked[disabled] + .el-swradio-style {
+.el-swradio.el-swradio-blue > input[type="radio"]:checked[disabled] + .el-swradio-style {
   background-color: #b0d7f5;
 }
-.el-swradio.el-swradio-green > input[type="checkbox"]:checked + .el-swradio-style {
+.el-swradio.el-swradio-green > input[type="radio"]:checked + .el-swradio-style {
   background-color: #13ce66;
 }
-.el-swradio.el-swradio-green > input[type="checkbox"]:checked[disabled] + .el-swradio-style {
+.el-swradio.el-swradio-green > input[type="radio"]:checked[disabled] + .el-swradio-style {
   background-color: #a1efc4;
 }
-.el-swradio.el-swradio-red > input[type="checkbox"]:checked + .el-swradio-style {
+.el-swradio.el-swradio-red > input[type="radio"]:checked + .el-swradio-style {
   background-color: #ff4949;
 }
-.el-swradio.el-swradio-red > input[type="checkbox"]:checked[disabled] + .el-swradio-style {
+.el-swradio.el-swradio-red > input[type="radio"]:checked[disabled] + .el-swradio-style {
   background-color: #f9b3b3;
 }
-.el-swradio.el-swradio-yellow > input[type="checkbox"]:checked + .el-swradio-style {
+.el-swradio.el-swradio-yellow > input[type="radio"]:checked + .el-swradio-style {
   background-color: #f7ba2a;
 }
-.el-swradio.el-swradio-yellow > input[type="checkbox"]:checked[disabled] + .el-swradio-style {
+.el-swradio.el-swradio-yellow > input[type="radio"]:checked[disabled] + .el-swradio-style {
   background-color: #fbeac1;
 }

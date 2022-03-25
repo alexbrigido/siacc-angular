@@ -1,5 +1,6 @@
 
 <div ng-init="start = 0; endIndex = 0">
+
 	<!-- inicio servico -->
 	<div ng-repeat="listaCategoria in ctrl.listaCategoriaFull"  ng-init="endIndex = endIndex+1">
 	
@@ -7,24 +8,31 @@
 			
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a data-parent="#categora{{$index}}" data-target="#categora{{$index}}" >
+					<a data-toggle="collapse" data-parent="#categora{{$index}}" data-target="#categora{{$index}}" >
 						{{zeroEsquerda(listaCategoria.nuCategoria,4)}} - {{listaCategoria.deCategoria}} </a>
 				</h4>
 			</div>
  
-			<div id="categora{{$index}}">
-				<div class="panel-body col-sm-6">  
-					<div class="form-check"  ng-repeat="listaServico in listaCategoria.servicos | orderBy:'nuServico' "   ng-init="id = ctrl.addIndex()">
-						
-						<label class="el-switch"> 
-							<input type="checkbox"   
-							   ng-model="{{ctrl.servicos[id].icSelecionado}}" 
-							   value="{{listaServico.nuServico}}"
-						 	   checked="{{ctrl.servicos[id].icSelecionado}}" 
-							   ng-change="ctrl.validarCheck(ctrl.servicos[id], listaCategoria.nuCategoria); ctrl.validarServicoTarifa(ctrl.servicos[id])"> 
+			<div id="categora{{$index}}" ng-class="$index=='0' ? ' in': ''" class="panel-collapse collapse ">
+				<div class="panel-body">  
+					<div class="form-check"  ng-repeat="serv in listaCategoria.servicos | orderBy:'nuServico' "   ng-init="id = ctrl.addIndex()">
+						<label class="el-switch" ng-show="serv.nuCategoria == '0001'"> 
+							<input type="checkbox" 
+						 	   ng-model="serv.icSelecionado" 
+							   value="{{serv.nuServico}}"
+						 	   ng-checked="serv.icSelecionado" 
+							   ng-change="ctrl.validarCheck(serv, serv.nuCategoria); ctrl.validarServicoTarifa(serv)"> 
 							<span class="el-switch-style">  </span>
 						</label> 
-						<span class="margin-r">{{listaServico.deServico}} </span>
+						<label class="el-swradio" ng-show="serv.nuCategoria != '0001'">
+							<input type="radio" name="categoria{{serv.nuCategoria}}"
+						 	   ng-model="serv.icSelecionado" 
+							   value="{{serv.nuServico}}"
+						 	   ng-checked="serv.icSelecionado" 
+							   ng-change="ctrl.validarCheck(serv, serv.nuCategoria); ctrl.validarServicoTarifa(serv)"> 
+							<span class="el-swradio-style" for="radioServico{{$index}}">  </span>
+						</label>
+						<span class="margin-r">{{serv.deServico}} </span>
 					</div>
 				</div>
 			</div>

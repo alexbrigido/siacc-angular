@@ -127,7 +127,7 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 				deCategoria: 'FORMA DE PAGAMENTO',
 				servicos: [
 					{
-						icSelecionado : 'true',
+						icSelecionado : false,
 						nuServico : 1,
 						nuCategoria : 1,
 						deServico : 'DOC',
@@ -142,7 +142,7 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 						vrTarifaContrada : 0.00
 					},
 					{
-						icSelecionado : 'true',
+						icSelecionado : true,
 						nuServico : 2,
 						nuCategoria : 1,
 						deServico : 'COBRANCA CAIXA',
@@ -185,28 +185,28 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 						deServicoReduzido : 'VIA VAN'
 					},
 					{
-						icSelecionado : true,
+						icSelecionado : false,
 						nuServico : 12,
 						nuCategoria : 2,
 						deServico : 'VIA SITE',
 						deServicoReduzido : 'VIA SITE'
 					},
 					{
-						icSelecionado : true,
+						icSelecionado : false,
 						nuServico : 13,
 						nuCategoria : 2,
 						deServico : 'VIA TRANSMISSAO DIRETA',
 						deServicoReduzido : 'VIA TRANSMISSAO DIRETA'
 					},
 					{
-						icSelecionado : true,
+						icSelecionado : false,
 						nuServico : 14,
 						nuCategoria : 2,
 						deServico : 'VIA INTERNET BANKING CXA',
 						deServicoReduzido : 'VIA INTERNET BANKING CXA'
 					},
 					{
-						icSelecionado : 'checked',
+						icSelecionado : false,
 						nuServico : 15,
 						nuCategoria : 2,
 						deServico : 'NENHUM',
@@ -225,7 +225,7 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 						deServico : 'COM AUTORIZACAO'
 					},
 					{
-						icSelecionado : true,
+						icSelecionado : false,
 						nuServico : 15,
 						nuCategoria : 26,
 						deServico : 'NENHUM'
@@ -237,7 +237,7 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 
 	vm.listaTarifaContratadaFull = [
 					{
-						icSelecionado : 'true',
+						icSelecionado : true,
 						nuServico : 1,
 						nuCategoria : 1,
 						deServico : 'DOC',
@@ -252,7 +252,7 @@ webapp .controller( 'PacoteManutencaoController',function($scope, $rootScope, $s
 						vrTarifaContrada : 0.00
 					},
 					{
-						icSelecionado : 'true',
+						icSelecionado : true,
 						nuServico : 2,
 						nuCategoria : 1,
 						deServico : 'COBRANCA CAIXA',
