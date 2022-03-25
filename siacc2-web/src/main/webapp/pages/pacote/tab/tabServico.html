@@ -1,6 +1,5 @@
 
 <div ng-init="start = 0; endIndex = 0">
-
 	<!-- inicio servico -->
 	<div ng-repeat="listaCategoria in ctrl.listaCategoriaFull"  ng-init="endIndex = endIndex+1">
 	
@@ -13,7 +12,7 @@
 				</h4>
 			</div>
  
-			<div id="categora{{$index}}" ng-class="$index=='0' ? ' in': ''" class="panel-collapse collapse ">
+			<div id="categora{{$index}}" ng-class="$index=='0' ? ' in': ''" class="panel-collapse collapse">
 				<div class="panel-body">  
 					<div class="form-check"  ng-repeat="serv in listaCategoria.servicos | orderBy:'nuServico' "   ng-init="id = ctrl.addIndex()">
 						<label class="el-switch" ng-show="serv.nuCategoria == '0001'"> 
@@ -30,7 +29,7 @@
 							   value="{{serv.nuServico}}"
 						 	   ng-checked="serv.icSelecionado" 
 							   ng-change="ctrl.validarCheck(serv, serv.nuCategoria); ctrl.validarServicoTarifa(serv)"> 
-							<span class="el-swradio-style" for="radioServico{{$index}}">  </span>
+							<span class="el-swradio-style" for="categoria{{serv.nuCategoria}}">  </span>
 						</label>
 						<span class="margin-r">{{serv.deServico}} </span>
 					</div>
@@ -39,6 +38,6 @@
 			
 		</div> 
 	</div>
-	
+
 </div>
 

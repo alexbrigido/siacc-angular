@@ -88,7 +88,7 @@
 								</thead>
 								<tbody>
 									<tr ng-repeat="row in displayDataFull ">
-										<td>{{zeroEsquerda(row.nuConvenio,10)}} -
+										<td>{{zeroEsquerda(row.nuConvenio,6)}} -
 											{{row.noConvenio}}</td>
 										<td>{{row.noUf}}</td>
 										<td><span ng-if="row.nuCgcBasico!=0">
@@ -100,7 +100,7 @@
 										<td>{{row.dtInclusao | date: 'dd/MM/yyyy' }}</td>
 										<td>
 											<button
-												ng-click="openViewPaginaParam('pacote/manutencao', {nuTipoCompromisso: row.nuTipoCompromisso,  nuPacote: row.nuPacote})"
+												ng-click="openViewPaginaParam('convenio/incluir', {nuTipoCompromisso: row.nuTipoCompromisso,  nuPacote: row.nuPacote})"
 												class="btn btn-icon-xs btn-icon btn-rounded btn-primary waves-effect"
 												data-placement="left">
 												<i class="fa fa-arrow-right fa-xs"></i>

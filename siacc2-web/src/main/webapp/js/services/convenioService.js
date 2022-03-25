@@ -7,14 +7,16 @@ webApp.factory('convenioService', ['$http','$rootScope','whttp','$q',	function($
 		var deferred = $q.defer();
 		var paramenter = "ws/convenio/findAll";
 
-		whttp.get(paramenter).then(function(res) {
+		$http.get(paramenter).then(function(res) {
 			if (!res.temErro) {
+				console.log(res);
 				deferred.resolve(res);
 			} else {
+				console.log('erro');
 				deferred.reject(null);
 			}
 		}, function(request, status, err) {
-
+			console.log('erro: ' + status);
 		});
 
 		return deferred.promise;

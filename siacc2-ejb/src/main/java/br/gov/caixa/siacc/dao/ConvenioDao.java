@@ -54,6 +54,7 @@ public class ConvenioDao extends AbstractDao<ConvenioModel>{
 			  jpql.append("         rownumber > 0  ");
 			  jpql.append("     order by ");
 			  jpql.append("         rownumber ");
+			  jpql.append("    fetch first 25 rows only  ");
 			     
 
 			final Query q =  this.getEntityManager().createNativeQuery(jpql.toString(), ConvenioModel.class);           
