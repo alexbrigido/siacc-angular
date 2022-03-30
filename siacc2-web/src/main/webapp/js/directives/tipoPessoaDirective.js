@@ -8,7 +8,7 @@
                  ngClick: '=?',
              }, 
              template: 
-            	 	'	<div class="col-md-12 "> ' +
+            	 	'	<div class="col-md-6"> ' +
             	 		'	<label>Tipo de pessoa</label>' +
 						'  		<div   ng-repeat="lst in tipoPessoa | orderBy:\'idTipoPessoa\' " >' +
 						'			<div class="checkbox-inline col-sm-2">' +
@@ -22,7 +22,7 @@
 						'			</div>  ' +
 						'		</div>'  +
 						'	</div> '  	+
-						'	<div class="col-md-3"> ' +
+						'	<div class="col-md-6"> ' +
 						'			<label>CPF / CNPJ</label> ' +
 						'		<input type="text" ng-model="tpnucpfcnpj" id="nucpfnpj" ng-blur="validarCPFCNPJ()" class="md-input format_date " maxlength="68" /> ' +
 						'	</div> '  	,

@@ -10,91 +10,75 @@
 					</div>
 					<div class="card-body"> 
 						<div class="col-sm-12" ng-show="ctrl.dataConenio==null">
-								<tipo-Pessoa-Fisica-Juridica ng-model="ctrl.pessoaJuridica" />
-							</div> 
-						<div class="form-group row"> 
+							<tipo-Pessoa-Fisica-Juridica ng-model="ctrl.pessoaJuridica" />
+						</div> 
 						
-							 
+						<div class="form-group row"> 
 							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a data-toggle="collapse" data-parent="#categora"
-										data-target="#categora"> Informações cadastrais</a>
-								</h4>
+								<h1 class="panel-title">
+									<a data-toggle="collapse" data-parent="#categora" data-target="#categora"> 
+										Informações Cadastrais
+									</a>
+								</h1>
 							</div>
 								 
 								
 							<div class="card-body text-box" >
-						 		 
 									<div class="row card-text-box">
-										<div class="col-md-2">
-											<div class="panel">
-												<label class="control-label">Número do convênio</label> <span
-													class="input">{{ctrl.dataConenio.nuConvenio}} </span>
-											</div>
-										</div>
-										<div class="col-md-2 ">
-											<div class="panel">
-												<label class="control-label">CPF/CNPJ</label> <span
-													class="input"> <span
-													ng-if="ctrl.dataConenio.nuCgcBasico!=0">
-														{{zeroEsquerda(ctrl.dataConenio.nuCgcBasico,8)}}/
-														{{zeroEsquerda(ctrl.dataConenio.nuCgcOrdem,4)}}-{{ctrl.dataConenio.nuCgcDv}}
-												</span> <span ng-if="ctrl.dataConenio.nuCpf!=0">
-														{{zeroEsquerda(ctrl.dataConenio.nuCpf,9)}}-{{ctrl.dataConenio.nuCpfDv}}
-												</span>
-												</span>
-											</div>
-										</div>
-
 										<div class="col-md-4">
 											<div class="panel">
-												<label class="control-label">Nome do convênio</label> <span
-													class="input">{{ctrl.dataConenio.noConvenio}} </span>
+												<label class="control-label">Nome do convênio</label> 
+												<input class="form-control">
 											</div>
 										</div>
 
 										<div class="col-md-2">
 											<div class="panel">
-												<label class="control-label">Tipo Pessoa</label> <span
-													class="input">{{ctrl.pessoaJuridica.noTipoPessoa}} </span>
+												<label class="control-label">Número do convênio</label> 
+												<input class="form-control">
 											</div>
 										</div>
-
-
-										<div class="col-md-2">
+										
+										<div class="col-md-3">
 											<div class="panel">
-												<label class="control-label">Situação</label> <span
-													class="input">Ativo </span>
+												<label class="control-label">Tipo Pessoa</label>
+													<input class="form-control" value="{{ctrl.pessoaJuridica.noTipoPessoa}}" disabled="disabled">
 											</div>
 										</div>
 
+										<div class="col-md-3">
+											<div class="panel">
+												<label class="control-label">Situação</label>
+												<input class="form-control" value="Ativo" disabled="disabled">
+											</div>
+										</div>
 									</div>
 									
 									<div id="categora" class="panel-collapse collapse in">
 									<div class="row card-text-box">
 										<div class="col-md-5">
 											<div class="panel">
-												<label class="control-label">Endereço</label> <span
-													class="input">{{ctrl.dataConenio.noLogradouro}} </span>
+												<label class="control-label">Endereço</label>
+												<input class="form-control">
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="panel">
-												<label class="control-label">Numero</label> <span
-													class="input">{{ctrl.dataConenio.nuLocal}} </span>
+												<label class="control-label">Numero</label>
+												<input class="form-control" disabled="disabled" value="999999">
 											</div>
 										</div>
 
 										<div class="col-md-2">
 											<div class="panel">
-												<label class="control-label">Complemento</label> <span
-													class="input">{{ctrl.dataConenio.noComplemento}} </span>
+												<label class="control-label">Complemento</label>
+												<input class="form-control">
 											</div>
 										</div>
 										<div class="col-md-3">
 											<div class="panel">
-												<label class="control-label">Telefone</label> <span
-													class="input">{{ctrl.dataConenio.nuTelefone}} </span>
+												<label class="control-label">Telefone</label>
+												<input class="form-control">
 											</div>
 										</div>
 
@@ -103,65 +87,76 @@
 									<div class="row card-text-box">
 										<div class="col-md-5">
 											<div class="panel">
-												<label class="control-label">Bairro</label> <span
-													class="input">{{ctrl.dataConenio.noBairro}} </span>
+												<label class="control-label">Bairro</label>
+												<input class="form-control">
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="panel">
-												<label class="control-label">Cidade</label> <span
-													class="input">{{ctrl.dataConenio.noCidade}} </span>
+												<label class="control-label">Cidade</label>
+												<input class="form-control">
 											</div>
 										</div>
 
 										<div class="col-md-2">
 											<div class="panel">
-												<label class="control-label">UF</label> <span class="input">{{ctrl.dataConenio.noUf}}
-												</span>
+												<label class="control-label">UF</label>
+												<input class="form-control">
 											</div>
 										</div>
 										<div class="col-md-3">
 											<div class="panel">
-												<label class="control-label">CEP</label> <span class="input">{{ctrl.dataConenio.nuCep}}
-												</span>
+												<label class="control-label">CEP</label>
+												<input class="form-control">
 											</div>
 										</div>
 									</div>
 
 									<div class="row card-text-box">
-										<div class="col-md-9">
+										<div class="col-md-6">
 											<div class="panel">
-												<label class="control-label">Agência de vinculação</label> <span
-													class="input">{{ctrl.dataConenio.nuCgcUnidade}} </span>
+												<label class="control-label">CPF / CNPJ</label>
+												<input class="form-control" disabled="disabled" value="00.489.828/0010-46">
 											</div>
 										</div>
-										<div class="col-md-3">
+										<div class="col-md-2">
 											<div class="panel">
-												<label class="control-label text-center">CNAE</label> <span
-													class="input">{{ctrl.dataConenio.nuCnae}} </span>
+												<label class="control-label">Agência de vinculação</label>
+												<input class="form-control">
+											</div>
+										</div>
+										<div class="col-md-2">
+											<div class="panel">
+												<label class="control-label text-center">CNAE</label>
+												<input class="form-control">
 											</div>
 										</div>
 
 									</div>
 									<div class="row card-text-box">
-										<div class="col-md-4">
+										<div class="col-md-3">
+											<div class="panel">
+												<label class="control-label">Faturamento</label>
+												<input class="form-control">
+											</div>
+										</div>
+										<div class="col-md-3">
 											<div class="panel">
 												<label class="control-label">Data Início da vigência</label>
-												<span class="input">{{ctrl.dataConenio.dtInicioVigencia}}
-												</span>
+												<input class="form-control" disabled="disabled" value="30/03/2022">
 											</div>
 										</div>
-										<div class="col-md-4">
+										<div class="col-md-3">
 											<div class="panel">
-												<label class="control-label">Data Fim da vigência</label> <span
-													class="input">{{ctrl.dataConenio.dtFimVigencia}} </span>
+												<label class="control-label">Data Fim da vigência</label> 
+												<input class="form-control">
 											</div>
 										</div>
 
-										<div class="col-md-4">
+										<div class="col-md-3">
 											<div class="panel">
-												<label class="control-label">Data inclusão</label> <span
-													class="input">{{ctrl.dataConenio.dtInclusao}} </span>
+												<label class="control-label">Data inclusão</label>
+												<input class="form-control" disabled="disabled" value="30/03/2022">
 											</div>
 										</div>
 									</div>
@@ -357,7 +352,7 @@
 											
 											<div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="home-tab">
 				
-												aaa dasdasd
+												Dados dos Compromissos
 				
 											</div>
 											
@@ -388,7 +383,7 @@
 							class="btn btn-fw btn-primary waves-effect hidden-print"
 							ng-click="ctrl.consultaConvenio()" title="Consultar"
 							data-toggle="tooltip">
-							<i class="fas fa-share-square m-r-xs"></i> Consultar
+							<i class="fas fa-share-square m-r-xs"></i> Incluir
 						</button>
 					</div>
 				</div>
