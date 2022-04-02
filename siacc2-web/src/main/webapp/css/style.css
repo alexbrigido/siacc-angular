@@ -12,9 +12,9 @@
    padding: 9px 24px  !important;
 }
 .panel-title {
-	margin-top: 0;
-	margin-bottom: 0;
-	font-size: 11px !important;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 14px !important;
 	font-weight: bolder;
 	color: inherit;
 }

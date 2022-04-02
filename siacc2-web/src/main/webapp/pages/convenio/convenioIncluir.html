@@ -35,7 +35,7 @@
 										<div class="col-md-2">
 											<div class="panel">
 												<label class="control-label">Número do convênio</label> 
-												<input class="form-control">
+												<input class="form-control" disabled="disabled" value="999999">
 											</div>
 										</div>
 										
@@ -62,14 +62,8 @@
 												<input class="form-control">
 											</div>
 										</div>
-										<div class="col-md-2">
-											<div class="panel">
-												<label class="control-label">Numero</label>
-												<input class="form-control" disabled="disabled" value="999999">
-											</div>
-										</div>
 
-										<div class="col-md-2">
+										<div class="col-md-4">
 											<div class="panel">
 												<label class="control-label">Complemento</label>
 												<input class="form-control">
@@ -125,7 +119,7 @@
 												<input class="form-control">
 											</div>
 										</div>
-										<div class="col-md-2">
+										<div class="col-md-4">
 											<div class="panel">
 												<label class="control-label text-center">CNAE</label>
 												<input class="form-control">
@@ -152,31 +146,9 @@
 												<input class="form-control">
 											</div>
 										</div>
-
-										<div class="col-md-3">
-											<div class="panel">
-												<label class="control-label">Data inclusão</label>
-												<input class="form-control" disabled="disabled" value="30/03/2022">
-											</div>
-										</div>
 									</div>
-								</div>
-
-								<ul class="nav nav-tabs" id="myTab" role="tablist"  >
-										<li class="nav-item active"><a class="nav-link active"
-											id="home-tab" data-toggle="tab" data-target="#tab1" role="tab"
-											aria-controls="home" aria-selected="true">Geral</a></li>
-										
-											<li class="nav-item"><a class="nav-link" id="profile-tab"
-											data-toggle="tab" data-target="#tab2" role="tab"
-											aria-controls="profile" aria-selected="false">Compromisso</a></li>
-									 
-									</ul>
-										<div class="tab-content" id="myTabContent" >
-											<div class="tab-pane fade active in" id="tab1" role="tabpanel" aria-labelledby="home-tab">
-											<br>
-											<div class="row card-text-box">
-												
+									
+									<div class="row card-text-box">
 												<div class="col-md-4">
 													<div class="panel">
 														<div ng-repeat="tp in convenioFormalizado">
@@ -218,8 +190,7 @@
 														</div>
 													</div>
 												</div>
-
-										</div>
+									</div>
 
 										<div class="row card-text-box">
 												<div class="col-md-4">
@@ -252,7 +223,7 @@
 													</div>
 												</div>
 											</div>
-
+											
 											<div class="row card-text-box">
 												<div class="col-md-2 ">
 													<div class="panielswitch">
@@ -348,8 +319,17 @@
 
 											</div>
 
-										</div>
-											
+								</div>
+
+								<ul class="nav nav-tabs" id="myTab" role="tablist"  >
+										
+											<li class="nav-item"><a class="nav-link" id="profile-tab"
+											data-toggle="tab" data-target="#tab2" role="tab"
+											aria-controls="profile" aria-selected="true">Compromisso</a></li>
+									 
+									</ul>
+										<div class="tab-content" id="myTabContent" >
+									
 											<div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="home-tab">
 				
 												Dados dos Compromissos
