@@ -92,8 +92,7 @@
 										<th class="text-left " st-sort="UF">UF</th>
 										<th class="text-left " st-sort="UF">CPF / CNPJ</th>
 										<th class="text-left " st-sort="nuTelefone">Telefone</th>
-										<th class="text-left " st-sort="dataInclusao">Data de
-											Inclusão</th>
+										<th class="text-left " st-sort="dataInclusao">Data de Inclusão</th>
 										<th class="col-xs-1 text-center exclude"></th>
 									</tr>
 								</thead>
@@ -103,10 +102,10 @@
 											{{row.noConvenio}}</td>
 										<td>{{row.noUf}}</td>
 										<td><span ng-if="row.nuCgcBasico!=0">
-												{{zeroEsquerda(row.nuCgcBasico,8)}}/
-												{{zeroEsquerda(row.nuCgcOrdem,4)}}-{{row.nuCgcDv}} </span> <span
-											ng-if="row.nuCpf!=0">
-												{{zeroEsquerda(row.nuCpf,9)}}-{{row.nuCpfDv}} </span></td>
+												{{zeroEsquerda(row.nuCgcBasico,8)}}/{{zeroEsquerda(row.nuCgcOrdem,4)}}-{{zeroEsquerda(row.nuCgcDv,2)}}
+											 </span> 
+											 <span ng-if="row.nuCpf!=0">
+												{{zeroEsquerda(row.nuCpf,9)}}-{{zeroEsquerda(row.nuCpfDv,2)}}</span></td>
 										<td>{{row.nuTelefone}}</td>
 										<td>{{row.dtInclusao | date: 'dd/MM/yyyy' }}</td>
 										<td>

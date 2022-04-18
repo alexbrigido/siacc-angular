@@ -63,7 +63,14 @@ webapp.controller('MenuController', function($scope, $rootScope, $filter,
 			'filhosFilhoProcessoCodigo' : "001200",
 			'filhosFilhoProcessoNome' : "Convênio",
 			'filhosPaiProcessoCodigo' : "002"
-		} ]
+			},
+			{
+			'filhosFilhoExecutavel' : "compromisso",
+			'filhosFilhoProcessoCodigo' : "001200",
+			'filhosFilhoProcessoNome' : "Compromisso",
+			'filhosPaiProcessoCodigo' : "003"
+			}
+		]
 
 	}, {
 		'filhosFilhoExecutavel' : "",

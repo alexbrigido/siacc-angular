@@ -4,7 +4,34 @@ webapp .controller( 'ConvenioListController',function($scope, $rootScope, $state
  
 
 	vm.init = function() { 
-		vm.listaConvenio();
+		//vm.listaConvenio();
+		vm.dataConenioFull = [
+			{
+				nuConvenio: 600500,
+				noConvenio: "CONVENIO XPTO",
+				noUf: "DF",
+				nuCgcBasico: 489828,
+				nuCgcOrdem: 10,
+				nuCgcDv: 46,
+				nuCpf: 0, 
+				nuCpfDv: 0,
+				nuTelefone: 33692525,
+				dtInclusao: "01/01/2000"
+			},
+			{
+				nuConvenio: 988988,
+				noConvenio: "CONVENIO CASAS BAHIA",
+				noUf: "DF",
+				nuCgcBasico: 123456,
+				nuCgcOrdem: 1,
+				nuCgcDv: 7,
+				nuCpf: 0, 
+				nuCpfDv: 0,
+				nuTelefone: 33692525,
+				dtInclusao: "01/01/2001"
+			},
+			
+		];
 	}
 
 	vm.listaConvenio = function() {
