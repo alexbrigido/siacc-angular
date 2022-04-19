@@ -176,6 +176,12 @@ blockquote {
 
 label {
   font-weight: normal;
+  margin-top: 5px;
+}
+
+.required:after {
+    content:" *";
+    color: red;
 }
 
 sup {

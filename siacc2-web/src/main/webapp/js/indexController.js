@@ -10,7 +10,7 @@ webapp.controller('IndexController', function($scope,$state, $rootScope,$filter)
 		$state.go(page, param);
 	}
 	
-	$rootScope.nomeUsuarioLogado = "Joseliano Pereira";
-	$rootScope.matricula = "F718586";
+	$rootScope.nomeUsuarioLogado = "Fulano de Tal da Silva";
+	$rootScope.matricula = "C000001";
 	 
 })

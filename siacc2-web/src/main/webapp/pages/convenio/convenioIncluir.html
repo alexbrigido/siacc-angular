@@ -27,7 +27,7 @@
 									<div class="row card-text-box">
 										<div class="col-md-4">
 											<div class="panel">
-												<label class="control-label">Nome do Convênio</label> 
+												<label class="control-label required">Nome do Convênio</label> 
 												<input class="form-control">
 											</div>
 										</div>
@@ -115,7 +115,7 @@
 										</div>
 										<div class="col-md-2">
 											<div class="panel">
-												<label class="control-label">Agência de vinculação</label>
+												<label class="control-label">Agência de Vinculação</label>
 												<input class="form-control">
 											</div>
 										</div>
@@ -136,13 +136,13 @@
 										</div>
 										<div class="col-md-3">
 											<div class="panel">
-												<label class="control-label">Data Início da vigência</label>
+												<label class="control-label">Data Início da Vigência</label>
 												<input class="form-control" disabled="disabled" value="30/03/2022">
 											</div>
 										</div>
 										<div class="col-md-3">
 											<div class="panel">
-												<label class="control-label">Data Fim da vigência</label> 
+												<label class="control-label">Data Fim da Vigência</label> 
 												<input class="form-control">
 											</div>
 										</div>
@@ -195,7 +195,7 @@
 										<div class="row card-text-box">
 												<div class="col-md-4">
 													<div class="panel">
-														<label class="control-label">Regra de lançamento</label>
+														<label class="control-label">Regra de Lançamento</label>
 														<div ng-repeat="tp in tipoLancamento">
 															<label class="el-switch "> <input type="checkbox"
 																ng-model="ctrl.dataConenio.icRegraLancamento"
@@ -210,7 +210,7 @@
 
 												<div class="col-md-4">
 													<div class="panel">
-														<label class="control-label text-center">Tipo de conta no retorno</label>
+														<label class="control-label text-center">Tipo de Conta no Retorno</label>
 														<div ng-repeat="tp in tipoContaRetorno">
 															<label class="el-switch "> <input type="checkbox"
 																ng-model="ctrl.dataConenio.icRetornoConta"
@@ -291,7 +291,7 @@
 												<div class="col-md-4">
 													<div class="panielswitch">
 														<label class="control-label ">Realiza Tradução de
-															Conta depósito</label> <select
+															Conta Depósito</label> <select
 															ng-model="ctrl.dataConenio.icTipoEmpresa"
 															class="form-control">
 															<option value="">Selecione...</option>
